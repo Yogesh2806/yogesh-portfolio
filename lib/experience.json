@@ -1,0 +1,125 @@
+[
+ {
+  "frm": "Mar 2025",
+  "to": "Now",
+  "cls": "FULL-TIME",
+  "loc": "CHENNAI · ONSITE",
+  "co": "Doctiq",
+  "role": "Founding Product Designer",
+  "col": "#2B3A8C",
+  "fg": "#FBF5EA",
+  "pts": [
+   "First and only product designer for a clinic-management (EHR) SaaS. Built the dashboard and marketing site from the ground up and own them end to end.",
+   "Led a full revamp for a new feature set: consultation suite, dental charting, AI inbox and analytics, made clear for non-technical staff.",
+   "Built a mini design system that keeps the product consistent and speeds up handoff.",
+   "Refreshed the marketing site with glassmorphism, micro-interactions and motion; kept the dashboard clean and function-first."
+  ],
+  "met": [
+   "2 clinics + 1 hospital onboarded",
+   "2 more in the pipeline",
+   "5 min → 45 s documentation"
+  ],
+  "cv": "doctiq",
+  "cvcap": "Doctiq, in pixels",
+  "cta": "Read the Doctiq case study"
+ },
+ {
+  "frm": "Nov 2025",
+  "to": "Aug 2026",
+  "cls": "FOUNDER",
+  "loc": "CHENNAI · ON-SITE",
+  "co": "Modent Me",
+  "role": "Founder &amp; Creative Head",
+  "col": "#E8457A",
+  "fg": "#1A1426",
+  "pts": [
+   "Founded and ran a creative studio for brand, social and video content: strategy, scripting, direction, design and delivery.",
+   "Owned client relationships end to end for 3 clients: scoping, content, timelines and final delivery.",
+   "Built an AI-augmented production workflow (Claude, ChatGPT, generative image and video tools)."
+  ],
+  "met": [
+   "3 clients",
+   "Brand · motion · video"
+  ]
+ },
+ {
+  "frm": "Jul 2024",
+  "to": "Feb 2026",
+  "cls": "FULL-TIME",
+  "loc": "CHENNAI · HYBRID",
+  "co": "Wall Street English",
+  "role": "Product Designer · via Strawberry Infotech",
+  "col": "#C8102E",
+  "fg": "#FBF5EA",
+  "pts": [
+   "Owned design for core learner-facing areas of a global EdTech platform in 15+ countries, shaping roadmap, release sequencing and UX strategy.",
+   "Led an end-to-end mobile app revamp: research, competitive analysis and high-fidelity prototypes for a faster beta.",
+   "Built and maintained a mobile + web design system on Atomic Design principles."
+  ],
+  "met": [
+   "Onboarding time −13%",
+   "Dropouts −19%",
+   "Class bookings +7%",
+   "Speak+: 5 → 2,000+ paying users"
+  ],
+  "cv": "wse",
+  "cvcap": "Wall Street English, in pixels",
+  "cta": "Read the Speak+ case study"
+ },
+ {
+  "frm": "Apr 2024",
+  "to": "Aug 2024",
+  "cls": "FREELANCE",
+  "loc": "REMOTE",
+  "co": "Swimingo",
+  "role": "Product Designer · Freelance",
+  "col": "#0F6E6E",
+  "fg": "#FBF5EA",
+  "pts": [
+   "Led the full rebrand from SwimNGo to Swimingo: new visual identity and design system for a D2C platform serving swim academies.",
+   "Ran A/B tests, design sprints and stakeholder workshops to drive data-informed UX improvements."
+  ],
+  "met": [
+   "Retention ~+90%",
+   "Daily actives +15%",
+   "Satisfaction +40%"
+  ],
+  "cv": "swim",
+  "cvcap": "Swimingo, in pixels",
+  "cta": "Read the Swimingo case study"
+ },
+ {
+  "frm": "Nov 2023",
+  "to": "Aug 2024",
+  "cls": "FREELANCE",
+  "loc": "CHENNAI",
+  "co": "Ducima Analytics",
+  "role": "UI/UX Designer · Freelance",
+  "col": "#F4A300",
+  "fg": "#1A1426",
+  "pts": [
+   "Designed web and mobile experiences for an internal financial-operations platform: travel-spend management, multi-step approvals and expense visibility.",
+   "Simplified booking and approval-routing flows with the product owner to cut friction and speed up task completion."
+  ],
+  "met": [
+   "Web + mobile",
+   "Fin-ops"
+  ]
+ },
+ {
+  "frm": "Mar 2022",
+  "to": "Jul 2023",
+  "cls": "FULL-TIME",
+  "loc": "CHENNAI",
+  "co": "CES",
+  "role": "Associate Software Technologist",
+  "col": "#1A1426",
+  "fg": "#FBF5EA",
+  "pts": [
+   "Built user-facing frontend interfaces alongside designers and engineers. The cross-functional exposure is what led me into full-time product design."
+  ],
+  "met": [
+   "Where design pulled me in"
+  ]
+ }
+]

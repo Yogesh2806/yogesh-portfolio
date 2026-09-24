@@ -1,0 +1,915 @@
+[
+ {
+  "key": "doctiq",
+  "name": "Doctiq",
+  "color": "#2B3A8C",
+  "fg": "#FBF5EA",
+  "cover": {
+   "src": "/img/cases/doctiq-doctiq-cover.webp",
+   "w": 1536,
+   "h": 1024
+  },
+  "cap": "the ultimate workspace for modern clinics",
+  "note": "PRD to shipped product in 2 weeks ;)",
+  "kicker": "Case study 01 · HealthTech · Clinic SaaS",
+  "title": "Designing an AI-powered clinic SaaS app, shipped in two weeks",
+  "sub": "Overhauled Doctiq's core platform into a hands-free, AI-driven clinic and hospital workspace, ahead of a regional medical expo.",
+  "meta": [
+   [
+    "Client",
+    "Doctiq"
+   ],
+   [
+    "Industry",
+    "HealthTech / Clinic SaaS (EMR)"
+   ],
+   [
+    "Role",
+    "Founding Product Designer"
+   ],
+   [
+    "Platform",
+    "Responsive web app"
+   ],
+   [
+    "Timeline",
+    "2-week sprint"
+   ]
+  ],
+  "snapshot": "Doctiq is an AI-powered operating system for clinics and hospitals. As founding product designer, I was tasked with overhauling the core platform and shipping a cohesive, demo-ready product in two weeks, ahead of a major regional medical expo. Working solo with an AI-augmented workflow, I designed a hands-free clinical workspace built around ambient voice scribing, automated WhatsApp patient triage and deep modularity.",
+  "link": "https://doctiq.in/",
+  "metrics": [
+   [
+    "5 min → 45 s",
+    "consultation documentation time"
+   ],
+   [
+    "300+",
+    "qualified leads at the medical expo"
+   ],
+   [
+    "2 + 1",
+    "clinics and a hospital live"
+   ],
+   [
+    "~70%",
+    "fewer unhandled inquiries"
+   ]
+  ],
+  "problem_intro": "Traditional electronic medical record (EMR) platforms in India force clinicians to spend more time typing into rigid forms than engaging with patients. Four problems compounded:",
+  "problems": [
+   [
+    "Documentation fatigue",
+    "Doctors spend up to 40% of a consultation manually typing symptoms, vitals and medication instructions."
+   ],
+   [
+    "Front-desk bottlenecks",
+    "Inefficient handling of WhatsApp inquiries meant high drop-off, empty slots and revenue leakage."
+   ],
+   [
+    "Rigid legacy architectures",
+    "Incumbents (Practo, DocOn, Eka Care, KiviHealth) impose fixed data schemas that can't flex to multi-specialty workflows, wards or custom prescriptions."
+   ],
+   [
+    "Non-technical user friction",
+    "Senior doctors and hospital directors routinely abandon clinical software with steep learning curves."
+   ]
+  ],
+  "problem_close": "the brief was as much constraint as problem: solve all of this, cohesively, in two weeks.",
+  "goals_b": [
+   "Move clinics from fragmented admin software to an automated, hands-free workspace",
+   "Differentiate from rigid incumbents through automation and deep customization"
+  ],
+  "goals_u": [
+   "Give clinicians back their time by removing manual documentation",
+   "Reduce front-desk bottlenecks and missed patient inquiries",
+   "Make the platform usable by non-technical staff with almost no learning curve"
+  ],
+  "goals_img": {
+   "src": "/img/cases/doctiq-clinic-automation-goals.webp",
+   "w": 1800,
+   "h": 1090
+  },
+  "goals_img_alt": "Clinic automation goals: automation, customization, time savings, efficiency, usability",
+  "users_img": {
+   "src": "/img/cases/doctiq-health-software-adoption.webp",
+   "w": 1536,
+   "h": 1716
+  },
+  "users_img_alt": "Healthcare software adoption: the pain points clinics told us about",
+  "users_intro": "Despite the compressed timeline, I grounded the work in real discovery:",
+  "methods": [
+   [
+    "Competitor benchmarking",
+    "Deconstructed Practo, DocOn, Eka Care and KiviHealth: crowded navigation, no hands-free input, rigid billing."
+   ],
+   [
+    "Practitioner interviews",
+    "In-depth interviews with 4 practicing doctors to observe real consultation patterns and pain points."
+   ],
+   [
+    "Internal synthesis",
+    "Rapid sessions with the founder and lead engineer to turn business concepts into user flows."
+   ]
+  ],
+  "personas_label": "Three personas anchored the design",
+  "personas": [
+   [
+    "Senior Practitioner",
+    "\"Dr. Traditional\". Needs zero-friction documentation that removes typing without cluttering the consultation room."
+   ],
+   [
+    "Practice Manager",
+    "Needs live visibility into patient queues, inventory dispensing and automated message triage."
+   ],
+   [
+    "Facility Administrator",
+    "Needs real-time bed occupancy, multi-department admissions and unified billing."
+   ]
+  ],
+  "insight": "For non-technical clinicians, the winning move wasn't more features. It was getting the interface out of the way: the less the software asked doctors to do, the more they'd trust and adopt it.",
+  "principles": [
+   [
+    "Hands-free first",
+    "Favor voice and automation over forms; every removed keystroke is a win."
+   ],
+   [
+    "Speak human, not software",
+    "Name features for what they do: Voice-to-Prescription, not \"NLP\"."
+   ],
+   [
+    "Clarity for the non-technical",
+    "Senior doctors and directors must get productive fast, without training."
+   ],
+   [
+    "Surface what matters",
+    "Auto-populate the essentials; tuck raw complexity into drawers."
+   ],
+   [
+    "Modular by design",
+    "Let clinics customize without breaking backend data integrity."
+   ]
+  ],
+  "solution_intro": "I designed Doctiq as a clinical workspace. The headline features:",
+  "features": [
+   [
+    "Voice-to-Prescription",
+    "An ambient scribe turns multi-language consultations (English, Tamil, Hindi, Telugu, Kannada, Marathi, Bengali) into editable vitals, symptoms, diagnoses and medications."
+   ],
+   [
+    "24/7 AI receptionist",
+    "A two-pane console that automates WhatsApp inquiries and booking, with instant AI Mode / Human Mode overrides."
+   ],
+   [
+    "Inpatient command board",
+    "A bed-status matrix with admissions, active charts and charge ledgers, closing the discharge payment-leakage gap."
+   ],
+   [
+    "WhatsApp broadcasts",
+    "Cohort selection with a live, device-accurate preview, sent asynchronously so campaigns never slow the clinic."
+   ],
+   [
+    "Gamified milestones",
+    "Progress bars and quest cards that reward staff with credits and badges, speeding up daily adoption."
+   ],
+   [
+    "Adaptive slate dark mode",
+    "A toggle from clinical light mode to a slate dark canvas, cutting glare across long shifts."
+   ]
+  ],
+  "solution_img": {
+   "src": "/img/cases/doctiq-doctiq-features.webp",
+   "w": 1776,
+   "h": 1461
+  },
+  "solution_img_alt": "Doctiq features wheel",
+  "screens_note": "real screens, straight from the product",
+  "screen_rows": [
+   [
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/doctiq-doctiq-dash.webp",
+       "alt": "AI inbox: WhatsApp conversations with patients",
+       "w": 1800,
+       "h": 984
+      }
+     ]
+    },
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/doctiq-doctiq-whatsapp-campaign.webp",
+       "alt": "WhatsApp campaigns composer with live preview",
+       "w": 1800,
+       "h": 984
+      }
+     ]
+    }
+   ],
+   [
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/doctiq-doctiq-milestone.webp",
+       "alt": "Milestones: quest board and reward feed",
+       "w": 1800,
+       "h": 984
+      }
+     ]
+    },
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/doctiq-doctiq-patient-profile.webp",
+       "alt": "Patient profile with history and guardian contacts",
+       "w": 1800,
+       "h": 984
+      }
+     ]
+    }
+   ]
+  ],
+  "trade_img": {
+   "src": "/img/cases/doctiq-balancing-design-choices.webp",
+   "w": 1392,
+   "h": 1068
+  },
+  "trade_img_alt": "Balancing design choices for efficiency",
+  "impact_img": {
+   "src": "/img/cases/doctiq-impact-of-medical-expo-and-ai-receptionist.webp",
+   "w": 1625,
+   "h": 1032
+  },
+  "impact_img_alt": "Impact of the medical expo and the AI receptionist",
+  "trade_note": "the interesting calls were about restraint.",
+  "tradeoffs": [
+   [
+    "Full transcript",
+    "Structured data",
+    "Stored the raw transcription in a collapsible drawer and gave the main interface to auto-populated prescription fields.",
+    "the doctor sees decisions, not noise."
+   ],
+   [
+    "Deep customization",
+    "Standard components",
+    "Built a modular Template Configuration Engine for letterheads, custom fields and reports, without breaking backend validation.",
+    "multi-specialty flexibility without schema chaos."
+   ],
+   [
+    "Speed",
+    "A full design system",
+    "Prioritized an agile token architecture over a full component library, refining components in code alongside the developer.",
+    "shipped on deadline, with tokens that still scale."
+   ]
+  ],
+  "impact": [
+   [
+    "300+",
+    "qualified leads captured at the medical expo through live demos"
+   ],
+   [
+    "2 + 1",
+    "clinics and a multi-specialty hospital deployed, 2 more in rollout"
+   ],
+   [
+    "~65%",
+    "less administrative documentation overhead in piloted practices"
+   ],
+   [
+    "~40%",
+    "more after-hours bookings through the 24/7 AI receptionist"
+   ],
+   [
+    "24 hrs",
+    "for non-technical staff to reach proficiency, with no formal training"
+   ]
+  ],
+  "reflection": [
+   "Designing for healthcare is an exercise in subtraction. The wins came from stripping away jargon and keystrokes, not adding features.",
+   "AI, used deliberately, changes what a solo designer can ship: I planned, tested and delivered an enterprise-grade product in two weeks without handing over a single strategic decision. Renaming a technical NLP feature to \"Voice-to-Prescription\" did as much for adoption as any screen. Next, I'd formalize the token foundation into a full design system now that the product has proven itself."
+  ],
+  "setup": [
+   [
+    "Role",
+    "Founding Product Designer"
+   ],
+   [
+    "Timeline",
+    "2-week high-velocity redesign sprint, ahead of a regional medical expo"
+   ],
+   [
+    "Workflow",
+    "Gemini → Claude Design → JSON design tokens → Figma foundation → handover"
+   ]
+  ],
+  "gallery_rows": [
+   [
+    {
+     "fr": 5,
+     "imgs": [
+      {
+       "src": "/img/cases/doctiq-compare-doctiq-1.webp",
+       "alt": "Before and after: the Doctiq marketing site",
+       "w": 1015,
+       "h": 1920
+      }
+     ]
+    },
+    {
+     "fr": 7,
+     "imgs": [
+      {
+       "src": "/img/cases/doctiq-compare-doctiq-2.webp",
+       "alt": "Before and after: dashboard",
+       "w": 1800,
+       "h": 534
+      },
+      {
+       "src": "/img/cases/doctiq-compare-doctiq-3.webp",
+       "alt": "Before and after: patient tables",
+       "w": 1800,
+       "h": 533
+      },
+      {
+       "src": "/img/cases/doctiq-compare-doctiq-4.webp",
+       "alt": "Before and after: settings and forms",
+       "w": 1800,
+       "h": 510
+      }
+     ]
+    }
+   ]
+  ],
+  "gallery_label": "Before &amp; after",
+  "gallery_note": "what changed, side by side",
+  "slug": "doctiq",
+  "extraKind": "doctiq",
+  "extraData": null
+ },
+ {
+  "key": "speak",
+  "name": "Speak+",
+  "color": "#E8457A",
+  "fg": "#1A1426",
+  "cover": {
+   "src": "/img/cases/speakp-speak-cover.webp",
+   "w": 1280,
+   "h": 832
+  },
+  "cap": "Speak+, now inside Core",
+  "note": "5 paying users. then 2,000+ :)",
+  "kicker": "Case study 02 · EdTech · Wall Street English",
+  "title": "Reviving a dead app: from 5 to 2,000+ paying users in 6 months",
+  "sub": "Repositioning a failing standalone EdTech app into a core product feature, driving 2,000+ paid subscriptions through UX strategy and ecosystem integration.",
+  "meta": [
+   [
+    "Client",
+    "Wall Street English · Speak+"
+   ],
+   [
+    "Industry",
+    "EdTech"
+   ],
+   [
+    "Role",
+    "Product Designer (sole designer)"
+   ],
+   [
+    "Platform",
+    "Web &amp; mobile"
+   ],
+   [
+    "Timeline",
+    "2 + 5 months"
+   ]
+  ],
+  "snapshot": "Speak+ was a standalone English-speaking-practice app that had stalled at 5 paying users: decent downloads, almost no conversion. Rather than pour budget into acquiring new users, I repositioned Speak+ as a feature inside Wall Street English's trusted Core Course ecosystem, redesigning its positioning, onboarding and in-app promotion. In six months, paid subscriptions grew from 5 to 2,000+.",
+  "metrics": [
+   [
+    "5 → 2,000+",
+    "paid subscriptions in six months"
+   ],
+   [
+    "15+",
+    "countries on the platform"
+   ],
+   [
+    "1",
+    "designer: me"
+   ]
+  ],
+  "problem_intro": "Wall Street English is a global English-learning company built on structured courses and speaking practice with real teachers. Speak+ began as a separate B2C app: unlimited small-group speaking classes on a monthly subscription. On paper it worked. In practice it was dying.",
+  "problems": [
+   [
+    "Unclear value",
+    "As a standalone product, Speak+ sat outside any structured learning journey, so new users couldn't see why it mattered."
+   ],
+   [
+    "Weak onboarding, dated UI",
+    "Little to build trust meant free trials rarely converted."
+   ],
+   [
+    "Flatlined at 5",
+    "Paid subscriptions simply stopped moving."
+   ]
+  ],
+  "problem_close": "a strong feature, trapped in the wrong container: a standalone app.",
+  "goals_b": [
+   "Grow paid Speak+ subscriptions by integrating it into the ecosystem, not acquiring users externally",
+   "Extend recurring revenue by keeping students engaged beyond course completion",
+   "Reduce dependency on costly external B2C acquisition"
+  ],
+  "goals_u": [
+   "Give advanced learners a clear way to keep improving after structured courses",
+   "Make Speak+'s value obvious within the learning journey",
+   "Offer flexible, unlimited practice tied to real-life communication"
+  ],
+  "users_intro": "The people most likely to convert were already inside the ecosystem: existing Core Course students, a warm and trusting audience who simply weren't upgrading.",
+  "methods": [
+   [
+    "Satisfaction surveys",
+    "Asked learners what they valued and where Speak+ fit (or didn't) in their week."
+   ],
+   [
+    "In-app behaviour analysis",
+    "Looked at where students dropped off and where upgrade prompts were ignored."
+   ],
+   [
+    "Teacher signal",
+    "Teachers were already recommending Speak+, and it still saw almost no adoption."
+   ]
+  ],
+  "personas_label": "Who I designed for",
+  "personas": [
+   [
+    "Core Course student",
+    "Already paying for a structured course; doesn't want to pay twice for practice."
+   ],
+   [
+    "Advanced learner",
+    "Finishing levels and looking for a way to keep speaking regularly."
+   ],
+   [
+    "Alumni",
+    "Completed the course; at risk of drifting away without a reason to return."
+   ]
+  ],
+  "insight": "The barrier was never awareness or trust. Speak+ was built and priced as a separate product stacked on a course students had already paid for. It wasn't an acquisition gap. It was positioning, placement and pricing.",
+  "principles": [
+   [
+    "Seamless",
+    "Integrated, not intrusive. Speak+ should feel like a continuation, not an upsell."
+   ],
+   [
+    "Valuable",
+    "Practice with purpose. Frame it as an essential fluency builder."
+   ],
+   [
+    "Trust-led",
+    "Promote without pressure. Contextual education, not aggressive upselling."
+   ],
+   [
+    "Scalable",
+    "Designed for growth. Reusable promotion surfaces and flexible entry points."
+   ]
+  ],
+  "principles_img": {
+   "src": "/img/cases/speakp-speak-strategy.webp",
+   "w": 1488,
+   "h": 1020
+  },
+  "principles_img_alt": "Speak+ strategic tenets: seamless, valuable, trust-led, scalable",
+  "solution_img": {
+   "src": "/img/cases/speakp-speak-integeration.webp",
+   "w": 1416,
+   "h": 1836
+  },
+  "solution_img_alt": "Speak+ integration into the Core app, step by step",
+  "solution_intro": "We repositioned Speak+ from a standalone app into a speaking-practice feature embedded directly inside the Core Course experience. Three moves carried the work:",
+  "features": [
+   [
+    "Positioning &amp; messaging",
+    "Practice-first messaging and flows that framed Speak+ as the natural next step for advanced learners and alumni."
+   ],
+   [
+    "In-app promotion",
+    "Contextual, milestone-based prompts across the dashboard, onboarding and level results, right when its value was clearest."
+   ],
+   [
+    "Ecosystem integration",
+    "Embedded into existing subscriptions and alumni flows, so upgrading felt like continuing the journey."
+   ]
+  ],
+  "screens_note": "before and after: standalone Speak+ vs Speak+ in Core",
+  "screen_rows": [
+   [
+    {
+     "fr": 0.9215262778977682,
+     "imgs": [
+      {
+       "src": "/img/cases/speakp-old-speak.webp",
+       "alt": "Before: Speak+ as a standalone app",
+       "w": 1280,
+       "h": 1389
+      }
+     ]
+    },
+    {
+     "fr": 0.7319078947368421,
+     "imgs": [
+      {
+       "src": "/img/cases/speakp-new-speak.webp",
+       "alt": "After: Speak+ promoted inside the Core dashboard (some details blurred under NDA)",
+       "w": 1335,
+       "h": 1824
+      }
+     ]
+    }
+   ]
+  ],
+  "trade_img": {
+   "src": "/img/cases/speakp-balancing-brands.webp",
+   "w": 1200,
+   "h": 1068
+  },
+  "trade_img_alt": "Balancing brand identity and growth",
+  "trade_note": "the interesting decisions were about restraint, not features.",
+  "tradeoffs": [
+   [
+    "Standalone brand",
+    "Ecosystem integration",
+    "Keeping Speak+ separate would preserve its identity; folding it into Core would cost that visibility. I chose integration.",
+    "faster adoption and revenue, at the cost of a standalone brand."
+   ],
+   [
+    "Deep feature expansion",
+    "Rapid growth",
+    "I prioritized integration and in-app promotion over new features.",
+    "significant growth, while feature work waited."
+   ],
+   [
+    "Hard sell",
+    "Trust-based promotion",
+    "An aggressive upsell would convert faster short-term. I chose subtle, context-based education.",
+    "sustainable adoption without damaging trust."
+   ]
+  ],
+  "impact": [
+   [
+    "5 → 2,000+",
+    "paid subscriptions in six months"
+   ],
+   [
+    "Recurring",
+    "revenue stream, instead of a failing standalone product"
+   ],
+   [
+    "Both sides",
+    "adoption grew among students and teachers"
+   ],
+   [
+    "Longer LTV",
+    "advanced learners stayed engaged with flexible, unlimited practice"
+   ]
+  ],
+  "reflection": [
+   "A stalling product rarely needs more. It needs to be in the right place, at the right price.",
+   "Speak+ didn't fail because the practice was weak; it failed because it was framed as a separate purchase instead of a continuation of a journey students already trusted. The fix was distribution and positioning, not features. Next time I'd instrument the promotion surfaces from the start, to see which moment (onboarding, a level-up, course completion) actually drove upgrades."
+  ],
+  "setup": [
+   [
+    "Role",
+    "Product Designer (sole designer)"
+   ],
+   [
+    "Team",
+    "1 Product Manager · 1 Product Designer (me) · 3 Developers"
+   ],
+   [
+    "Timeline",
+    "2 months to integrate into the Core app · 5 months to promote and onboard franchises and users"
+   ]
+  ],
+  "slug": "speak-plus",
+  "extraKind": "speak",
+  "gallery_rows": []
+ },
+ {
+  "key": "swim",
+  "name": "Swimingo",
+  "color": "#0F6E6E",
+  "fg": "#FBF5EA",
+  "cover": {
+   "src": "/img/cases/swimingo-swimingo-cover.webp",
+   "w": 1600,
+   "h": 900
+  },
+  "cap": "learning to swim, made easy",
+  "note": "trust first. everything else second.",
+  "kicker": "Case study 03 · Marketplace · Sports",
+  "title": "Building trust into a two-sided swimming marketplace",
+  "sub": "Redesigned Swimingo from a low-visibility listings site into a trust-first marketplace connecting swim instructors and learners.",
+  "meta": [
+   [
+    "Client",
+    "Swimingo"
+   ],
+   [
+    "Industry",
+    "Marketplace / EdTech SaaS"
+   ],
+   [
+    "Role",
+    "Product &amp; Brand Designer"
+   ],
+   [
+    "Platform",
+    "Web &amp; mobile responsive"
+   ],
+   [
+    "Timeline",
+    "2 months"
+   ]
+  ],
+  "snapshot": "Swimingo is a two-sided marketplace connecting swimming instructors with learners: discovery, booking and progress tracking in one place. The early product was little more than a listings page. Instructors couldn't get visibility, customers couldn't find trusted instructors, and neither side had a reason to stay. I redesigned it into a structured, trust-first platform and led its rebrand from SwimNGo to Swimingo.",
+  "link": "https://www.swimingo.com/",
+  "metrics": [
+   [
+    "~90%",
+    "retention lift by month 3"
+   ],
+   [
+    "+15%",
+    "daily active users"
+   ],
+   [
+    "+40%",
+    "satisfaction scores"
+   ]
+  ],
+  "problem_intro": "Swimingo set out to connect swimming instructors with learners, but the original product wasn't bridging the two sides.",
+  "problems": [
+   [
+    "Invisible instructors",
+    "Instructors struggled to get visibility and manage their availability."
+   ],
+   [
+    "Hard to trust",
+    "Customers couldn't easily discover verified instructors on schedules that fit."
+   ],
+   [
+    "No standard",
+    "No reliable, centralized platform: no standard for trust, no structure to bring either side back."
+   ]
+  ],
+  "problem_close": "in a two-sided marketplace, if neither side sees value, neither side stays.",
+  "goals_b": [
+   "Increase instructor sign-ups and active listings",
+   "Improve retention and repeat bookings to drive revenue",
+   "Establish Swimingo as a trusted brand in the swimming-lesson market"
+  ],
+  "goals_u": [
+   "Help customers easily find safe, verified instructors",
+   "Let instructors manage schedules and bookings with ease",
+   "A smooth booking experience with clear communication and visible progress"
+  ],
+  "users_intro": "A two-sided marketplace has two customers with different goals, so I researched both, through competitor analysis and secondary research.",
+  "methods": [
+   [
+    "Instructors wanted",
+    "Visibility, steady bookings and credibility, held back by poor coordination and clunky scheduling."
+   ],
+   [
+    "Customers wanted",
+    "Safety, verified instructors, flexible schedules and small classes with clear pricing and progress."
+   ]
+  ],
+  "personas_label": "Personas",
+  "personas": [
+   [
+    "Sarah, 35 · Parent",
+    "Wants flexible scheduling and, above all, safety for her child."
+   ],
+   [
+    "Adam, 25 · Fitness enthusiast",
+    "Seeks self-improvement and visible progress tracking."
+   ],
+   [
+    "Emily, 40 · Educator",
+    "Needs a structured program that works for diverse learners."
+   ]
+  ],
+  "insight": "In this market, trust is the currency. Not price, not features. Parents valued safety over cost, and instructors needed visible credibility before they'd commit.",
+  "principles": [
+   [
+    "Trust-first",
+    "Every surface should earn confidence: verification, reviews, clarity."
+   ],
+   [
+    "Clarity over complexity",
+    "Two-sided doesn't have to mean complicated."
+   ],
+   [
+    "Minimize booking friction",
+    "The fewer steps to a booking, the better."
+   ],
+   [
+    "Personalize where it counts",
+    "Tailor to each side without over-engineering."
+   ],
+   [
+    "Structured but friendly",
+    "Organised enough to trust, warm enough to enjoy."
+   ],
+   [
+    "Conversion-focused onboarding",
+    "Onboarding is where trust, and retention, is won."
+   ]
+  ],
+  "principles_img": {
+   "src": "/img/cases/swimingo-design-principles.webp",
+   "w": 1464,
+   "h": 1044
+  },
+  "principles_img_alt": "Design principles matrix",
+  "solution_intro": "I rebuilt Swimingo into a structured two-sided platform, designed around trust and built to bring both sides back.",
+  "features": [
+   [
+    "Instructor discovery",
+    "Find verified, credible instructors fast."
+   ],
+   [
+    "Flexible scheduling",
+    "Availability that works for both sides."
+   ],
+   [
+    "Safe onboarding",
+    "Verification and trust built in from the first screen."
+   ],
+   [
+    "Dual dashboards",
+    "Tailored experiences for instructors and customers."
+   ],
+   [
+    "Progress tracking",
+    "Visible improvement that keeps learners engaged."
+   ],
+   [
+    "Small class sizes",
+    "A deliberate trust-and-quality signal."
+   ]
+  ],
+  "solution_img": {
+   "src": "/img/cases/swimingo-enhancing-swimingo-platform.webp",
+   "w": 1800,
+   "h": 1174
+  },
+  "solution_img_alt": "Enhancing Swimingo's platform: the six features stacked",
+  "screens_note": "the new Swimingo, after the rebrand",
+  "screen_rows": [
+   [
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/swimingo-book-flow.webp",
+       "alt": "Booking flow: from finding an instructor to a confirmed lesson",
+       "w": 1800,
+       "h": 929
+      }
+     ]
+    }
+   ],
+   [
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/swimingo-swim-1.webp",
+       "alt": "Swimingo landing page: learning how to swim, made easy",
+       "w": 1160,
+       "h": 1824
+      }
+     ]
+    },
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/swimingo-cusotmer.webp",
+       "alt": "Customer dashboard",
+       "w": 1800,
+       "h": 1162
+      },
+      {
+       "src": "/img/cases/swimingo-instructor.webp",
+       "alt": "Instructor dashboard",
+       "w": 1800,
+       "h": 1200
+      }
+     ]
+    }
+   ],
+   [
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/swimingo-onboarding.webp",
+       "alt": "Onboarding for customers and instructors",
+       "w": 1800,
+       "h": 1375
+      }
+     ]
+    }
+   ]
+  ],
+  "trade_img": {
+   "src": "/img/cases/swimingo-how-to-balance.webp",
+   "w": 1536,
+   "h": 840
+  },
+  "trade_img_alt": "How to balance early exploration and long-term consistency",
+  "trade_note": "two sides, one system.",
+  "tradeoffs": [
+   [
+    "Design system first",
+    "Prototype first",
+    "Rather than build a full design system upfront, I prototyped the product and aligned components with stakeholder feedback as I went.",
+    "faster iteration, still building toward consistency."
+   ],
+   [
+    "Two products",
+    "One shared system",
+    "I prioritized the moments that mattered most to each side, from one consistent system.",
+    "equal value to both sides, without doubling the complexity."
+   ]
+  ],
+  "impact": [
+   [
+    "~90%",
+    "increase in user retention, by month 3 of the revamp"
+   ],
+   [
+    "+15%",
+    "daily active users"
+   ],
+   [
+    "+40%",
+    "satisfaction scores"
+   ],
+   [
+    "+90%",
+    "social media engagement, paired with the rebrand"
+   ]
+  ],
+  "impact_img": {
+   "src": "/img/cases/swimingo-revamped.webp",
+   "w": 1776,
+   "h": 1284
+  },
+  "impact_img_alt": "Revamped version boosts user engagement",
+  "reflection": [
+   "The hardest part of a marketplace isn't the interface. It's balance.",
+   "Every decision had to serve instructors and customers without tipping the experience toward either. Treating trust as the core design problem, not a nice-to-have, is what made it work: once both sides felt safe, engagement followed. Next, I'd invest earlier in a proper design system."
+  ],
+  "setup": [
+   [
+    "Role",
+    "Product &amp; Brand Designer (sole designer). Led the rebrand from SwimNGo to Swimingo"
+   ],
+   [
+    "Team",
+    "CEO &amp; co-founder · COO &amp; co-founder · 1 Product Designer (me) · 2 Developers"
+   ],
+   [
+    "Timeline",
+    "2 months"
+   ]
+  ],
+  "gallery_rows": [
+   [
+    {
+     "fr": 1,
+     "imgs": [
+      {
+       "src": "/img/cases/swimingo-style-guide.webp",
+       "alt": "Swimingo V2 style guide: Noto Sans, Heroicons, colour palette",
+       "w": 1440,
+       "h": 1119
+      }
+     ]
+    }
+   ]
+  ],
+  "gallery_label": "Brand",
+  "gallery_note": "SwimNGo → Swimingo",
+  "slug": "swimingo",
+  "extraKind": "swim"
+ }
+]
