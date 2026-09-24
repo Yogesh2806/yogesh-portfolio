@@ -14,7 +14,7 @@ npm run build      # static site in /out
 
 1. Push this folder to a GitHub repo.
 2. On vercel.com: **Add New → Project**, import the repo, keep the defaults, **Deploy**.
-3. Add your domain under **Settings → Domains**, then update `SITE.url` in `lib/site.ts` (used for share cards).
+3. Live at https://yogeshjeevan.vercel.app. If you buy a domain later, add it under **Settings → Domains** and update `SITE.url` in `lib/site.ts` (used for share cards).
 
 Because `next.config.ts` uses `output: "export"`, the `/out` folder also works on any static host (Netlify, GitHub Pages, S3).
 
