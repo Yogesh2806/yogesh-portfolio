@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Instrument_Serif, JetBrains_Mono, Caveat, Hanken_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import Providers from "@/components/Providers";
 import { SITE } from "@/lib/site";
 import "@/styles/base.css";
@@ -9,11 +9,11 @@ import "@/styles/case.css";
 import "@/styles/visuals.css";
 import "@/styles/experience.css";
 
-const bricolage = Bricolage_Grotesque({ subsets: ["latin"], weight: ["400", "600", "700", "800"], variable: "--font-bricolage", display: "swap" });
-const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument", display: "swap" });
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-jetbrains", display: "swap" });
-const caveat = Caveat({ subsets: ["latin"], weight: ["500", "700"], variable: "--font-caveat", display: "swap" });
-const hanken = Hanken_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-hanken", display: "swap" });
+const bricolage = localFont({ src: "./fonts/BricolageGrotesque.woff2", weight: "400 800", variable: "--font-bricolage", display: "swap" });
+const instrument = localFont({ src: [{ path: "./fonts/InstrumentSerif-Regular.woff2", weight: "400", style: "normal" }, { path: "./fonts/InstrumentSerif-Italic.woff2", weight: "400", style: "italic" }], variable: "--font-instrument", display: "swap" });
+const jetbrains = localFont({ src: "./fonts/JetBrainsMono.woff2", weight: "400 600", variable: "--font-jetbrains", display: "swap" });
+const caveat = localFont({ src: "./fonts/Caveat.woff2", weight: "500 700", variable: "--font-caveat", display: "swap" });
+const hanken = localFont({ src: "./fonts/HankenGrotesk.woff2", weight: "400 700", variable: "--font-hanken", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
