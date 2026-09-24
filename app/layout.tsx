@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import Providers from "@/components/Providers";
 import { SITE } from "@/lib/site";
 import "@/styles/base.css";
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a href="#main" className="skip">Skip to content</a>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
