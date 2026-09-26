@@ -7,6 +7,8 @@ export const STATS = [
   ["~90%", "retention lift at Swimingo"],
 ];
 
+export const DOMAINS = [["B2B", "#FFE45C"], ["B2C", "#FFB3C7"], ["SaaS", "#B8D4FF"], ["Mobile native apps", "#C5F0A4"], ["Design systems", "#FFC98A"]];
+
 export const WORK = [
   { slug: "doctiq", cover: "/img/home/cover-doctiq.webp", bg: "#2B3A8C", fg: "#FBF5EA", kicker: "01 / HealthTech · Clinic SaaS", title: "Designing an AI-powered clinic OS, shipped in two weeks", desc: "Founding designer. Turned dense EMR workflows into a hands-free clinical workspace: ambient voice scribe, WhatsApp triage, bed matrix.", chips: ["Founding designer", "0 → 1", "Responsive web"], big: "5 min → 45 s", small: "consult documentation time, now live in 2 clinics + 1 hospital", sticker: "Shipped in 2 weeks", sbg: "#F4A300", sfg: "#1A1426" },
   { slug: "speak-plus", cover: "/img/home/cover-speak.webp", bg: "#E8457A", fg: "#1A1426", kicker: "02 / EdTech · Wall Street English", title: "Reviving a dead app: from 5 to 2,000+ paying users", desc: "Speak+ was a strong feature trapped in the wrong container. I repositioned it inside the core course, redesigning onboarding and in-app promotion.", chips: ["Product strategy", "Onboarding", "Web + mobile"], big: "5 → 2,000+", small: "paid subscriptions in six months", sticker: "15+ countries", sbg: "#1A1426", sfg: "#FBF5EA" },
