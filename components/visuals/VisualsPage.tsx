@@ -123,19 +123,19 @@ export default function VisualsPage() {
       </section>
 
       {/* MiniMo */}
-      <section className="v-ch mm" id="minimo">
-        <span className="mm-glow a" aria-hidden="true" /><span className="mm-glow b" aria-hidden="true" />
+      <section className="v-ch vmm" id="minimo">
+        <span className="vmm-glow a" aria-hidden="true" /><span className="vmm-glow b" aria-hidden="true" />
         <Head name="MiniMo" line="A little push, right on time." tags={["App concept", "iOS", "Widgets", "Liquid glass"]} color="var(--ink)" accent="#B85C38" chipBg="var(--ivory)" chipFg="var(--ink)" />
-        <figure className="mm-film" data-reveal="up">
+        <figure className="vmm-film" data-reveal="up">
           <video src="/video/minimo-film.mp4" poster="/video/minimo-film.jpg" autoPlay muted loop playsInline preload="metadata" aria-label="MiniMo app film: the concept in 21 seconds" />
-          <figcaption><span className="mm-rec"><i aria-hidden="true" />The film · 21 s</span><span className="hand">sound off, vibes on</span></figcaption>
+          <figcaption><span className="vmm-rec"><i aria-hidden="true" />The film · 21 s</span><span className="hand">sound off, vibes on</span></figcaption>
         </figure>
-        <div className="mm-top">
+        <div className="vmm-top">
           <Z ch="mm" f="minimo-hero" rot={-1.2} cap="the pitch, on one board" />
-          <div className="mm-about"><div className="label">What it is</div><p className="v-quote">A calm motivational audio player. Short clips from films, podcasts and interviews arrive at random moments, or on your own rhythm, and never while you sleep.</p><div className="note" style={{ background: "#FFE45C", transform: "rotate(3deg)", fontSize: 26, maxWidth: 300 }}>an idea I couldn&#8217;t stop designing ;)</div></div>
+          <div className="vmm-about"><div className="label">What it is</div><p className="v-quote">A calm motivational audio player. Short clips from films, podcasts and interviews arrive at random moments, or on your own rhythm, and never while you sleep.</p><div className="note" style={{ background: "#FFE45C", transform: "rotate(3deg)", fontSize: 26, maxWidth: 300 }}>an idea I couldn&#8217;t stop designing ;)</div></div>
         </div>
         <div className="v-sub"><span className="label">Three screens, three moods</span><span className="hand" style={{ color: "#B85C38" }}>random, not routine · widgets that breathe · quiet playback</span></div>
-        <div className="mm-three">
+        <div className="vmm-three">
           <Z ch="mm" f="minimo-random" rot={-1.5} cap="random, not routine" />
           <Z ch="mm" f="minimo-widgets" rot={1.2} cap="widgets that breathe" />
           <Z ch="mm" f="minimo-playback" rot={-1} cap="plays, then gets out of the way" />
