@@ -20,7 +20,7 @@
 .vi-s { font-size: 15px; opacity: .7; }
 
 .v-ch { position: relative; padding: 120px var(--gutter); overflow: hidden; }
-.vh { display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: 32px; align-items: end; }
+.vh { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; }
 .vh-num { font-family: var(--f-disp); font-weight: 800; font-size: 150px; line-height: .8; letter-spacing: -.06em; color: transparent; }
 .vh-main { display: flex; flex-direction: column; gap: 18px; }
 .vh h2 { margin: 0; font-family: var(--f-disp); font-weight: 800; font-size: clamp(46px, 6.7vw, 96px); line-height: .9; letter-spacing: -.05em; }
@@ -147,4 +147,39 @@
   .vz-browser .bar i { width: 7px; height: 7px; }
   .v-outro-covers { overflow-x: auto; padding: 16px 4px; }
   .v-oc { flex-shrink: 0; width: 200px; } .v-oc img { height: 120px; }
+}
+
+/* ------------------------------------------------------------------ MiniMo */
+.mm { position: relative; overflow: hidden; background: #F1E6DA; }
+.mm > * { position: relative; }
+.mm-glow { position: absolute !important; border-radius: 999px; filter: blur(90px); pointer-events: none; }
+.mm-glow.a { right: -160px; top: 60px; width: 620px; height: 620px; background: #F2C3A6; opacity: .55; }
+.mm-glow.b { left: -200px; top: 55%; width: 560px; height: 560px; background: #CFE0C4; opacity: .6; }
+.mm-film { margin: 80px 0 0; background: var(--ink); border-radius: 28px; padding: 14px; box-shadow: 0 30px 60px rgba(26, 20, 38, .28); }
+.mm-film video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 18px; background: #F1E6DA; }
+.mm-film figcaption { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 6px 2px; color: var(--ivory); }
+.mm-rec { display: flex; align-items: center; gap: 10px; font-family: var(--f-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+.mm-rec i { width: 10px; height: 10px; border-radius: 99px; background: #FF5A4E; animation: rec 1.4s ease-in-out infinite; }
+@keyframes rec { 50% { opacity: .25; } }
+.mm-film .hand { font-size: 28px; color: #F4B38A; }
+.mm-top { display: grid; grid-template-columns: 7fr 5fr; gap: 40px; align-items: center; margin-top: 96px; }
+.mm-about { display: flex; flex-direction: column; gap: 24px; }
+.mm-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; align-items: start; }
+.mm-three .vz-print { padding: 12px 12px 12px; }
+/* ------------------------------------------------------------------ Go Calories */
+.gc { background: #FAFAF7; }
+.gc-shot.vz-bare, .gc-shot { border: 1.5px solid rgba(26, 20, 38, .14); border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 0 24px 48px rgba(26, 20, 38, .12); }
+.gc-bottom { display: grid; grid-template-columns: 7fr 5fr; gap: 40px; align-items: start; margin-top: 96px; }
+.gc-sub { margin: 0 0 20px; }
+.gc-side { display: flex; flex-direction: column; gap: 28px; padding-top: 70px; }
+@media (max-width: 980px) {
+  .mm-film { margin-top: 36px; border-radius: 20px; padding: 8px; }
+  .mm-film video { border-radius: 14px; }
+  .mm-film .hand { font-size: 20px; }
+  .mm-rec { font-size: 11px; }
+  .mm-top, .mm-three, .gc-bottom { grid-template-columns: 1fr; gap: 28px; margin-top: 40px; }
+  .mm-three { margin-top: 0; }
+  .gc-side { padding-top: 0; }
+  .mm-glow.a { width: 300px; height: 300px; right: -120px; filter: blur(60px); }
+  .mm-glow.b { display: none; }
 }
