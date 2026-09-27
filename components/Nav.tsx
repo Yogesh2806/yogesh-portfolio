@@ -11,14 +11,13 @@ import { Close, Download, Menu } from "./Icons";
 type Props = {
   /** "reveal": hidden until the home film has ended; "float": visible from load */
   mode?: "reveal" | "float";
-  /** text colour while the nav sits flat on the hero, before it turns into the floating bar */
+  /** kept for older call sites; the pill nav looks the same on every background */
   tone?: "light" | "dark";
 };
 
-export default function Nav({ mode = "float", tone = "light" }: Props) {
+export default function Nav({ mode = "float" }: Props) {
   const path = usePathname() || "/";
   const [visible, setVisible] = useState(mode === "float");
-  const [floating, setFloating] = useState(mode === "reveal");
   const [active, setActive] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -32,15 +31,6 @@ export default function Nav({ mode = "float", tone = "light" }: Props) {
   }, [mode]);
 
   useEffect(() => { if (mode === "reveal" && visible) sound.play("swish"); }, [visible, mode]);
-
-  // inner pages: flat on the hero, floating bar once you scroll
-  useEffect(() => {
-    if (mode !== "float") return;
-    const on = () => setFloating(window.scrollY > 120);
-    on();
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
-  }, [mode]);
 
   // active link
   useEffect(() => {
@@ -67,20 +57,20 @@ export default function Nav({ mode = "float", tone = "light" }: Props) {
     } else lenis?.start();
   }, [open]);
 
-  const cls = ["nav", visible ? "show" : "", floating ? "floating" : "flat", `tone-${tone}`].join(" ");
+  const cls = ["nav", visible ? "show" : ""].join(" ");
 
   return (
     <>
       <header className={cls} inert={!visible || undefined}>
-        <Link href="/" className="nav-brand" aria-label="Yogesh Jeevan, home">
+        <Link href="/" className="nav-brand nav-pill" aria-label="Yogesh Jeevan, home">
           <span className="yj">yj.</span><span className="nm">{SITE.name}</span>
         </Link>
-        <nav className="nav-links" aria-label="Main">
+        <nav className="nav-links nav-pill" aria-label="Main">
           {NAV.map((n) => (
             <Link key={n.id} href={n.href} className={active === n.id ? "on" : ""} aria-current={active === n.id ? "page" : undefined}>{n.label}</Link>
           ))}
         </nav>
-        <div className="nav-end">
+        <div className="nav-end nav-pill">
           <SoundToggle />
           <a className="nav-cv" href={SITE.resume} download><span>Resume</span><Download size={16} /></a>
           <button type="button" className="nav-menu" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(true)} data-sound="none"><Menu size={18} />Menu</button>

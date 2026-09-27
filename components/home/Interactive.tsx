@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 import { sound } from "@/lib/sound";
 import { SITE, html } from "@/lib/site";
-import { STRIP, WORK, TEASER, TOOLS, NOTES } from "@/lib/home";
+import { STRIP, WORK, TEASER, TOOLS } from "@/lib/home";
 import { Arrow, Copy, Star } from "../Icons";
 import CoverGL from "./CoverGL";
 
@@ -94,38 +94,51 @@ export function Fan() {
   );
 }
 
-/* ------------------------------------------------ toolkit stickers: fall in, then you can throw them around */
+/* ------------------------------------------------ toolkit: brand-coloured pill stickers that fall in, then you can throw them around */
+const TOOL_LOOK: Record<string, [bg: string, fg: string, outline?: boolean]> = {
+  Figma: ["#A259FF", "#1A1426"], Claude: ["#D97757", "#1A1426"], ChatGPT: ["#10A37F", "#1A1426"], Notion: ["#FBF5EA", "#1A1426", true],
+  Dovetail: ["#6B4EFF", "#FBF5EA"], Framer: ["#1A1426", "#FBF5EA"], Jitter: ["#F4A300", "#1A1426"], Miro: ["#FFD02F", "#1A1426"],
+  Maze: ["#E8457A", "#1A1426"], Hotjar: ["#FBF5EA", "#1A1426", true], Jira: ["#2B3A8C", "#FBF5EA"], "Claude Code": ["#D97757", "#1A1426"],
+  Gemini: ["#3A63C4", "#FBF5EA"], "Adobe CC": ["#1A1426", "#FBF5EA"],
+};
+const TOOL_ROT = [-4, 3, -2, 5, -6, 2, -3, 6, -5, 3, -2, 4, -4, 5];
+const rotOf = (i: number) => TOOL_ROT[i % TOOL_ROT.length];
+
 export function Toolkit() {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const els = root.current!.querySelectorAll<HTMLElement>(".tool");
     const ctx = gsap.context(() => {
       gsap.fromTo(els, { y: -220, opacity: 0, rotate: (i) => (i % 2 ? 25 : -25) }, {
-        y: 0, opacity: 1, rotate: (i) => [-2, 1.5, -1, 2][i % 4], duration: 0.9, ease: "bounce.out", stagger: { each: 0.035, from: "random" },
+        y: 0, opacity: 1, rotate: (i) => rotOf(i), duration: 0.9, ease: "bounce.out", stagger: { each: 0.035, from: "random" },
         scrollTrigger: { trigger: root.current, start: "top 75%", once: true },
         onStart: () => sound.play("paper"),
       });
       // throwing stickers around is a desktop toy: gsap.matchMedia removes the draggables and
-      // snaps every sticker back to its grid slot as soon as the screen becomes small or touch-only
+      // snaps every sticker back to its slot as soon as the screen becomes small or touch-only
       const mm = gsap.matchMedia();
       mm.add("(pointer: fine) and (min-width: 981px)", () => {
         const d = Draggable.create(els, {
           bounds: root.current, type: "x,y", zIndexBoost: true,
           onPress() { sound.play("pop"); gsap.to(this.target, { scale: 1.08, rotate: 0, duration: 0.2 }); },
-          onRelease() { gsap.to(this.target, { scale: 1, rotate: gsap.utils.random(-6, 6), duration: 0.5, ease: "back.out(3)" }); },
+          onRelease() { gsap.to(this.target, { scale: 1, rotate: gsap.utils.random(-7, 7), duration: 0.5, ease: "back.out(3)" }); },
         });
-        return () => { d.forEach((x) => x.kill()); gsap.to(els, { x: 0, y: 0, scale: 1, rotate: (i) => [-2, 1.5, -1, 2][i % 4], duration: 0.4, overwrite: true }); };
+        return () => { d.forEach((x) => x.kill()); gsap.to(els, { x: 0, y: 0, scale: 1, rotate: (i) => rotOf(i), duration: 0.4, overwrite: true }); };
       });
     });
     return () => ctx.revert();
   }, []);
   return (
     <div ref={root} className="tools">
-      {TOOLS.map(([n, d], i) => (
-        <div key={n} className="tool" style={{ background: NOTES[i % 6] }} data-cursor="Drag">
-          <span className="tool-ic">{n[0]}</span><span className="tool-n">{n}</span><span className="tool-d">{d}</span>
-        </div>
-      ))}
+      {TOOLS.map(([n, d]) => {
+        const [bg, fg, outline] = TOOL_LOOK[n] || ["#FBF5EA", "#1A1426", true];
+        return (
+          <div key={n} className={`tool${outline ? " tool-outline" : ""}`} style={{ background: bg, color: fg }} data-cursor="Drag">
+            <span className="tool-ic" style={{ background: fg, color: bg }}>{n[0]}</span>
+            <span className="tool-t"><span className="tool-n">{n}</span><span className="tool-d">{d}</span></span>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -160,7 +173,6 @@ export function ContactActions() {
       <div className="contact-btns">
         <a className="btn btn-ink magnet" href={SITE.resume} download>Download resume <Arrow size={16} /></a>
         <a className="btn btn-outline magnet" href={SITE.linkedin} target="_blank" rel="noreferrer">LinkedIn <Arrow size={16} /></a>
-        <a className="btn btn-outline magnet" href={SITE.behance} target="_blank" rel="noreferrer">Behance <Arrow size={16} /></a>
       </div>
     </div>
   );

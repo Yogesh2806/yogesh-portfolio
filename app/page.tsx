@@ -102,8 +102,8 @@ export default function Home() {
         {/* (05) Toolkit */}
         <section className="sec toolkit">
           <div className="toolkit-head">
-            <div><div className="label">(05) Toolkit</div><h2 className="h-sec" data-split="">Tools I <span className="ital" style={{ color: "var(--pink)" }}>think</span> with</h2></div>
-            <p className="lede" data-reveal="up">AI speeds me up. Taste and critique decide.<br /><span className="hand" style={{ color: "var(--indigo)", fontSize: "1.4em" }}>speed without direction is just divergence.</span></p>
+            <div><div className="label">(05) Toolkit</div><h2 className="h-sec" data-split="">Tools I <span className="ital" style={{ color: "var(--indigo)" }}>think</span> with</h2></div>
+            <p className="lede toolkit-lede" data-reveal="up">AI speeds me up. Taste and critique decide. <span className="hand" style={{ color: "var(--pink)", fontSize: "1.37em" }}>speed without direction is just divergence.</span></p>
           </div>
           <Toolkit />
           <span className="hand toolkit-hint">psst, you can throw these around</span>
