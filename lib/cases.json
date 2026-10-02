@@ -25,7 +25,7 @@
    ],
    [
     "Role",
-    "Founding Product Designer"
+    "Founding Product Designer (Part-time)"
    ],
    [
     "Platform",
@@ -40,7 +40,7 @@
   "link": "https://doctiq.in/",
   "metrics": [
    [
-    "5 min → 45 s",
+    "~5 min → ~45 s",
     "consultation documentation time"
    ],
    [
@@ -269,6 +269,10 @@
   ],
   "impact": [
    [
+    "~5 min → ~45 s",
+    "consultation documentation time"
+   ],
+   [
     "300+",
     "qualified leads captured at the medical expo through live demos"
    ],
@@ -285,6 +289,10 @@
     "more after-hours bookings through the 24/7 AI receptionist"
    ],
    [
+    "~70%",
+    "fewer unhandled inquiries"
+   ],
+   [
     "24 hrs",
     "for non-technical staff to reach proficiency, with no formal training"
    ]
@@ -296,7 +304,7 @@
   "setup": [
    [
     "Role",
-    "Founding Product Designer"
+    "Founding Product Designer (Part-time)"
    ],
    [
     "Timeline",
@@ -349,7 +357,8 @@
   "gallery_note": "what changed, side by side",
   "slug": "doctiq",
   "extraKind": "doctiq",
-  "extraData": null
+  "extraData": null,
+  "impact_note": "Outcome figures are client-reported, from interviews and written feedback with our pilot clinics, not formal analytics."
  },
  {
   "key": "speak",
@@ -362,9 +371,9 @@
    "h": 832
   },
   "cap": "Speak+, now inside Core",
-  "note": "5 paying users. then 2,000+ :)",
+  "note": "5 paid subscriptions. then 2,000+ :)",
   "kicker": "Case study 02 · EdTech · Wall Street English",
-  "title": "Reviving a dead app: from 5 to 2,000+ paying users in 6 months",
+  "title": "Reviving a dead app: from 5 to 2,000+ paid subscriptions in 6 months",
   "sub": "Repositioning a failing standalone EdTech app into a core product feature, driving 2,000+ paid subscriptions through UX strategy and ecosystem integration.",
   "meta": [
    [
@@ -388,7 +397,7 @@
     "2 + 5 months"
    ]
   ],
-  "snapshot": "Speak+ was a standalone English-speaking-practice app that had stalled at 5 paying users: decent downloads, almost no conversion. Rather than pour budget into acquiring new users, I repositioned Speak+ as a feature inside Wall Street English's trusted Core Course ecosystem, redesigning its positioning, onboarding and in-app promotion. In six months, paid subscriptions grew from 5 to 2,000+.",
+  "snapshot": "Speak+ was a standalone English-speaking-practice app that had stalled at 5 paid subscriptions: decent downloads, almost no conversion. Rather than pour budget into acquiring new users, I repositioned Speak+ as a feature inside Wall Street English's trusted Core Course ecosystem, redesigning its positioning, onboarding and in-app promotion. In six months, paid subscriptions grew from 5 to 2,000+.",
   "metrics": [
    [
     "5 → 2,000+",
@@ -641,15 +650,15 @@
   "metrics": [
    [
     "~90%",
-    "retention lift by month 3"
+    "retention lift by month 3 (founder-reported)"
    ],
    [
     "+15%",
-    "daily active users"
+    "daily active users (founder-reported)"
    ],
    [
     "+40%",
-    "satisfaction scores"
+    "instructor satisfaction (survey)"
    ]
   ],
   "problem_intro": "Swimingo set out to connect swimming instructors with learners, but the original product wasn't bridging the two sides.",
@@ -853,19 +862,19 @@
   "impact": [
    [
     "~90%",
-    "increase in user retention, by month 3 of the revamp"
+    "retention lift by month 3 (founder-reported)"
    ],
    [
     "+15%",
-    "daily active users"
+    "daily active users (founder-reported)"
    ],
    [
     "+40%",
-    "satisfaction scores"
+    "instructor satisfaction (survey)"
    ],
    [
     "+90%",
-    "social media engagement, paired with the rebrand"
+    "social media engagement, from the marketing push paired with the rebrand"
    ]
   ],
   "impact_img": {
@@ -910,6 +919,7 @@
   "gallery_label": "Brand",
   "gallery_note": "SwimNGo → Swimingo",
   "slug": "swimingo",
-  "extraKind": "swim"
+  "extraKind": "swim",
+  "impact_note": "Retention and usage figures were shared by Swimingo’s founder after the revamp. Pre-revamp tracking was limited, so I treat them as directional."
  }
 ]

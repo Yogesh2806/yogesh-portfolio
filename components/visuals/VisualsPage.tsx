@@ -19,12 +19,17 @@ const CH: Record<string, { name: string; kicker: string; pieces: Piece[] }> = {
     { f: "minimo-widgets", alt: "MiniMo: home and lock screen widgets in four tints", cap: "Widgets that breathe" },
     { f: "minimo-playback", alt: "MiniMo: lock screen boost, mini player and Dynamic Island", cap: "Plays, then gets out of the way" },
   ] },
-  gc: { name: "Go Calories", kicker: "App concept", pieces: [
+  gc: { name: "Go Calories", kicker: "iOS app, built with Claude Code", pieces: [
     { f: "gocal-cover", alt: "Go Calories: profile, today's consumption and describe-a-meal screens", cap: "Go Calories" },
     { f: "gocal-onboarding", alt: "Go Calories onboarding: sign in, about you, your goal and your plan", cap: "A calm first run" },
     { f: "gocal-log", alt: "Go Calories logging: quick add, barcode scan, manual entry and saved presets", cap: "Four ways to log a meal" },
     { f: "gocal-history", alt: "Go Calories history: calendar, macros and micros, and editing a logged item", cap: "Every gram, every day" },
     { f: "gocal-personalize", alt: "Go Calories settings: AI food parsing, presets, units and notifications", cap: "Every setting, dialed in" },
+  ] },
+  lp: { name: "Learn Prep", kicker: "PWA, built with Claude Code", pieces: [
+    { f: "learnprep-hero", alt: "Learn Prep on desktop and phone: flashcards, a quiz and the English word of the day", cap: "Learn Prep" },
+    { f: "learnprep-modes", alt: "Learn Prep study modes: flashcards in light and dark, and the English word of the day", cap: "Three ways to study" },
+    { f: "learnprep-ai", alt: "Learn Prep settings: choose your AI engine, your own Gemini key, Chrome built-in AI or an in-browser model", cap: "Choose your AI" },
   ] },
   bz: { name: "Bizflyte", kicker: "Travel web + app", pieces: [
     { f: "temlate", alt: "Bizflyte brand board: logo, app icon, web and mobile screens", cap: "The brand, on one board" },
@@ -144,7 +149,7 @@ export default function VisualsPage() {
 
       {/* Go Calories */}
       <section className="v-ch gc" id="go-calories">
-        <Head name="Go Calories" line="Track what you eat, calmly." tags={["App concept", "iOS", "On-device AI", "Barcode scan"]} color="var(--ink)" accent="var(--ink)" chipBg="var(--ivory)" chipFg="var(--ink)" />
+        <Head name="Go Calories" line="Track what you eat, calmly." tags={["iOS app, built with Claude Code", "On-device AI", "Barcode scan"]} color="var(--ink)" accent="var(--ink)" chipBg="var(--ivory)" chipFg="var(--ink)" />
         <div className="v-block"><Z ch="gc" f="gocal-cover" frame="bare" className="gc-shot" /></div>
         <div className="v-sub"><span className="label">A flow, not a screen</span><span className="hand" style={{ color: "#3A63C4" }}>set up in a minute, then log however you like</span></div>
         <div className="dq-flow">
@@ -155,6 +160,20 @@ export default function VisualsPage() {
         <div className="gc-bottom">
           <div><div className="v-sub gc-sub"><span className="label">Every gram, every day</span><span className="hand" style={{ color: "#3A63C4" }}>calendar, macros, edits after the fact</span></div><Z ch="gc" f="gocal-history" frame="bare" className="gc-shot" /></div>
           <div className="gc-side"><Z ch="gc" f="gocal-personalize" frame="bare" className="gc-shot" /><p className="v-quote">Barcode scans, plain-English descriptions and an on-device AI model that never sends a meal to a server.</p><div className="note" style={{ background: "#FFB3C7", transform: "rotate(-2deg)", fontSize: 26, maxWidth: 280 }}>no account wall. no nagging.</div></div>
+        </div>
+      </section>
+
+      {/* Learn Prep */}
+      <section className="v-ch lp" id="learn-prep">
+        <Head name="Learn Prep" line="Study anywhere, with the AI you choose." tags={["PWA, built with Claude Code", "Offline-first", "Bring your own AI"]} color="var(--ink)" accent="#4C6B2F" chipBg="var(--ivory)" chipFg="var(--ink)" />
+        <div className="v-block"><Z ch="lp" f="learnprep-hero" frame="bare" className="gc-shot" /></div>
+        <div className="gc-bottom lp-two">
+          <div><div className="v-sub gc-sub"><span className="label">Three ways to study</span><span className="hand" style={{ color: "#4C6B2F" }}>flashcards, quiz and recall, light or dark</span></div><Z ch="lp" f="learnprep-modes" frame="bare" className="gc-shot" /></div>
+          <div><div className="v-sub gc-sub"><span className="label">Choose your AI</span><span className="hand" style={{ color: "#4C6B2F" }}>your key, Gemini Nano, or in-browser</span></div><Z ch="lp" f="learnprep-ai" frame="bare" className="gc-shot" /></div>
+        </div>
+        <div className="lp-foot">
+          <p className="v-quote">Offline-first learning app (English and design) where users choose their AI: their own API key, Gemini Nano, or an in-browser model.</p>
+          <a className="btn btn-ink" href="https://learn-prep-pro.vercel.app/" target="_blank" rel="noreferrer">Open Learn Prep <Arrow size={16} /></a>
         </div>
       </section>
 

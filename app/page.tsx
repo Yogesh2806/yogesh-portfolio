@@ -52,7 +52,7 @@ export default function Home() {
             <h2 className="h-sec" data-split="">Pixels I&#8217;m <span className="ital" style={{ color: "var(--pink)" }}>proud</span> of.</h2>
             <p className="lede" data-reveal="up">UI, brand and the odd poster, from Bizflyte to Modent Media. Less case study, more show and tell.</p>
             <Link href="/visuals/" className="btn btn-ink" data-reveal="up" data-sound="whoosh">See all visuals <Arrow size={17} /></Link>
-            <span className="hand teaser-note">8 projects · 29 pieces</span>
+            <span className="hand teaser-note">9 projects · 32 pieces</span>
           </div>
           <Fan />
         </section>

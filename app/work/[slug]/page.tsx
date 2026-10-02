@@ -15,7 +15,7 @@ type Case = {
   goals_b: string[]; goals_u: string[]; goals_img?: Img; goals_img_alt?: string; users_intro: string; methods: [string, string][]; personas_label: string; personas: [string, string][];
   insight: string; users_img?: Img; users_img_alt?: string; principles: [string, string][]; principles_img?: Img; principles_img_alt?: string; solution_intro: string;
   features: [string, string][]; solution_img?: Img; solution_img_alt?: string; screens_note: string; screen_rows: Row[]; trade_note: string; tradeoffs: [string, string, string, string][];
-  trade_img?: Img; trade_img_alt?: string; impact: [string, string][]; impact_img?: Img; impact_img_alt?: string; reflection: [string, string]; setup: [string, string][];
+  trade_img?: Img; trade_img_alt?: string; impact: [string, string][]; impact_note?: string; impact_img?: Img; impact_img_alt?: string; reflection: [string, string]; setup: [string, string][];
   gallery_rows: Row[]; gallery_label?: string; gallery_note?: string;
 };
 const ALL = CASES as unknown as Case[];
@@ -163,6 +163,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
         <section className="sec cs-impact dots">
           <Head n={n(9)} label="Impact">The <span className="ital">impact</span></Head>
           <div className="cs-impacts">{cs.impact.map(([a, b]) => <div key={a} className="cs-imp" data-reveal="up"><span data-count="">{a}</span><H s={b} /></div>)}</div>
+          {cs.impact_note && <p className="cs-impact-note" data-reveal="up">{cs.impact_note}</p>}
           {cs.impact_img && <div className="cs-fig"><Figure img={cs.impact_img} alt={cs.impact_img_alt!} title={figTitle} kicker="Impact" /></div>}
         </section>
 

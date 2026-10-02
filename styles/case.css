@@ -158,3 +158,6 @@ button.browser:hover { transform: rotate(0deg) translateY(-6px); box-shadow: 14p
   .cs-close { font-size: 26px; }
   .cs-screens-head { flex-direction: column; gap: 6px; } .cs-screens-head .hand { text-align: left; font-size: 23px; }
 }
+
+.cs-impact-note { margin: 20px 0 0; max-width: 900px; font-size: 15px; line-height: 1.5; font-style: italic; opacity: .78; }
+@media (max-width: 700px) { .cs-impact-note { font-size: 13px; margin-top: 14px; } }

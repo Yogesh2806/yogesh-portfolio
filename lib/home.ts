@@ -2,17 +2,17 @@ export const STRIP = ["Discovery", "UX research", "Information architecture", "H
 
 export const STATS = [
   ["3 yrs", "shipping B2C and SaaS, end to end"],
-  ["5 min → 45 s", "consult documentation at Doctiq"],
-  ["5 → 2,000+", "paying users for Speak+ in 6 months"],
-  ["~90%", "retention lift at Swimingo"],
+  ["~5 min → ~45 s", "consult documentation at Doctiq (client-reported)"],
+  ["5 → 2,000+", "paid subscriptions for Speak+ in 6 months"],
+  ["~90%", "retention lift at Swimingo (founder-reported)"],
 ];
 
 export const DOMAINS = [["B2B", "#FFE45C"], ["B2C", "#FFB3C7"], ["SaaS", "#B8D4FF"], ["Mobile native apps", "#C5F0A4"], ["Design systems", "#FFC98A"]];
 
 export const WORK = [
-  { slug: "doctiq", cover: "/img/home/cover-doctiq.webp", bg: "#2B3A8C", fg: "#FBF5EA", kicker: "01 / HealthTech · Clinic SaaS", title: "Designing an AI-powered clinic OS, shipped in two weeks", desc: "Founding designer. Turned dense EMR workflows into a hands-free clinical workspace: ambient voice scribe, WhatsApp triage, bed matrix.", chips: ["Founding designer", "0 → 1", "Responsive web"], big: "5 min → 45 s", small: "consult documentation time, now live in 2 clinics + 1 hospital", sticker: "Shipped in 2 weeks", sbg: "#F4A300", sfg: "#1A1426" },
-  { slug: "speak-plus", cover: "/img/home/cover-speak.webp", bg: "#E8457A", fg: "#1A1426", kicker: "02 / EdTech · Wall Street English", title: "Reviving a dead app: from 5 to 2,000+ paying users", desc: "Speak+ was a strong feature trapped in the wrong container. I repositioned it inside the core course, redesigning onboarding and in-app promotion.", chips: ["Product strategy", "Onboarding", "Web + mobile"], big: "5 → 2,000+", small: "paid subscriptions in six months", sticker: "15+ countries", sbg: "#1A1426", sfg: "#FBF5EA" },
-  { slug: "swimingo", cover: "/img/home/cover-swimingo.webp", bg: "#0F6E6E", fg: "#FBF5EA", kicker: "03 / Marketplace · Sports", title: "Building trust into a two-sided swimming marketplace", desc: "Rebranded SwimNGo to Swimingo and rebuilt it around trust: verified instructor onboarding, dual dashboards, flexible scheduling.", chips: ["Rebrand", "Design system", "A/B tests"], big: "~90%", small: "retention lift, +15% daily active users", sticker: "Rebrand + product", sbg: "#E8457A", sfg: "#1A1426" },
+  { slug: "doctiq", cover: "/img/home/cover-doctiq.webp", bg: "#2B3A8C", fg: "#FBF5EA", kicker: "01 / HealthTech · Clinic SaaS", title: "Designing an AI-powered clinic OS, shipped in two weeks", desc: "Founding designer. Turned dense EMR workflows into a hands-free clinical workspace: ambient voice scribe, WhatsApp triage, bed matrix.", chips: ["Founding designer", "0 → 1", "Responsive web"], big: "~5 min → ~45 s", small: "consult documentation time (client-reported), now live in 2 clinics + 1 hospital", sticker: "Shipped in 2 weeks", sbg: "#F4A300", sfg: "#1A1426" },
+  { slug: "speak-plus", cover: "/img/home/cover-speak.webp", bg: "#E8457A", fg: "#1A1426", kicker: "02 / EdTech · Wall Street English", title: "Reviving a dead app: from 5 to 2,000+ paid subscriptions", desc: "Speak+ was a strong feature trapped in the wrong container. I repositioned it inside the core course, redesigning onboarding and in-app promotion.", chips: ["Product strategy", "Onboarding", "Web + mobile"], big: "5 → 2,000+", small: "paid subscriptions in six months", sticker: "15+ countries", sbg: "#1A1426", sfg: "#FBF5EA" },
+  { slug: "swimingo", cover: "/img/home/cover-swimingo.webp", bg: "#0F6E6E", fg: "#FBF5EA", kicker: "03 / Marketplace · Sports", title: "Building trust into a two-sided swimming marketplace", desc: "Rebranded SwimNGo to Swimingo and rebuilt it around trust: verified instructor onboarding, dual dashboards, flexible scheduling.", chips: ["Rebrand", "Design system", "A/B tests"], big: "~90%", small: "retention lift, +15% daily active users (founder-reported)", sticker: "Rebrand + product", sbg: "#E8457A", sfg: "#1A1426" },
 ];
 
 export const TEASER = [
@@ -34,10 +34,10 @@ export const STORY_PHOTOS = [
 ];
 
 export const EXP = [
-  { when: "Mar 2025 → now", co: "Doctiq", role: "Founding Product Designer", desc: "First and only designer. Built the clinic OS from zero; live in 2 clinics + 1 hospital.", now: true },
+  { when: "Mar 2025 → now", co: "Doctiq", role: "Founding Product Designer (Part-time)", desc: "First and only designer. Built the clinic OS from zero; live in 2 clinics + 1 hospital.", now: true },
   { when: "Nov 2025 → Aug 2026", co: "Modent Me", role: "Founder &amp; Creative Head", desc: "Creative studio for brand, social and video. 3 clients, AI-augmented production." },
   { when: "Jul 2024 → Feb 2026", co: "Wall Street English", role: "Product Designer · via Strawberry Infotech", desc: "Global EdTech in 15+ countries. Onboarding time −13%, dropouts −19%, bookings +7%." },
-  { when: "Apr → Aug 2024", co: "Swimingo", role: "Product Designer · Freelance", desc: "Rebrand and design system. Retention up ~90%, daily actives +15%." },
+  { when: "Apr → Aug 2024", co: "Swimingo", role: "Product Designer · Freelance", desc: "Rebrand and design system. Founder-reported: retention up ~90%, daily actives +15%." },
   { when: "Nov 2023 → Aug 2024", co: "Ducima Analytics", role: "UI/UX Designer · Freelance", desc: "Travel-spend and multi-step approval flows for a fin-ops platform." },
   { when: "Mar 2022 → Jul 2023", co: "CES", role: "Associate Software Technologist", desc: "Built frontends next to designers. That is where design pulled me in." },
 ];
