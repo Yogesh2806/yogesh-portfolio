@@ -94,7 +94,7 @@ export default function Experience() {
             <Link className="btn btn-outline" href="/#work">See the case studies <Arrow size={16} /></Link>
             <Link className="btn btn-outline" href="/#contact">Say hello <Arrow size={16} /></Link>
           </div>
-          <span className="hand xp-pdf">PDF, 2 pages. no fluff, promise.</span>
+          <span className="hand xp-pdf">PDF, 1 page. no fluff, promise.</span>
         </section>
       </main>
       <Footer />
