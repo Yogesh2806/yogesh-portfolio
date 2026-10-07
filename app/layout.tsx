@@ -9,6 +9,7 @@ import "@/styles/home.css";
 import "@/styles/case.css";
 import "@/styles/visuals.css";
 import "@/styles/experience.css";
+import "@/styles/ds.css";
 
 const bricolage = localFont({ src: "./fonts/BricolageGrotesque.woff2", weight: "400 800", variable: "--font-bricolage", display: "swap" });
 const instrument = localFont({ src: [{ path: "./fonts/InstrumentSerif-Regular.woff2", weight: "400", style: "normal" }, { path: "./fonts/InstrumentSerif-Italic.woff2", weight: "400", style: "italic" }], variable: "--font-instrument", display: "swap" });

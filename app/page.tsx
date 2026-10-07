@@ -40,7 +40,7 @@ export default function Home() {
         <section id="work" className="sec work">
           <div className="work-head">
             <div><div className="label">(02) Selected work</div><h2 className="h-sec work-h" data-split="">Selected <span className="ital" style={{ color: "var(--mari)" }}>work</span></h2></div>
-            <span className="work-count">03 case studies</span>
+            <span className="work-count">04 case studies</span>
           </div>
           <WorkCards />
         </section>

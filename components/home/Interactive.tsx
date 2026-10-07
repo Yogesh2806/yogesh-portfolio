@@ -47,7 +47,7 @@ export function WorkCards() {
     <div className="work-list">
       {WORK.map((w, i) => (
         <article key={w.slug} className="work-card" style={{ background: w.bg, color: w.fg }} data-reveal="up" data-cursor="View case">
-          <Link href={`/work/${w.slug}/`} className="work-hit" aria-label={`Read the ${w.title} case study`} data-sound="whoosh" />
+          <Link href={"href" in w && w.href ? w.href : `/work/${w.slug}/`} className="work-hit" aria-label={`Read the ${w.title} case study`} data-sound="whoosh" />
           <div className="work-text">
             <span className="work-kick">{w.kicker}</span>
             <h3>{w.title}</h3>

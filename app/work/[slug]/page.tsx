@@ -189,10 +189,17 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
 
         {/* next case */}
         <section className="cs-next dots" style={{ background: cs.key === "swim" ? "rgba(251,245,234,.82)" : nxt.color }}>
-          <Link href={`/work/${nxt.slug}/`} className="cs-next-link" data-cursor="Next" data-sound="whoosh">
-            <div><div className="label">Next case study</div><span className="cs-next-t">{nxt.title} →</span></div>
-            <figure className="polaroid cs-next-cover"><img src={nxt.cover.src} alt={`${nxt.name} cover`} loading="lazy" /><figcaption>{nxt.name}</figcaption></figure>
-          </Link>
+          {cs.key === "swim" ? (
+            <Link href="/design-system/" className="cs-next-link" data-cursor="Next" data-sound="whoosh">
+              <div><div className="label">Next case study</div><span className="cs-next-t">Designing an open-source design system, with Claude as my build partner →</span></div>
+              <figure className="polaroid cs-next-cover"><img src="/img/ds/ds-figma-thumbnail.webp" alt="Aa NAD Design System cover" loading="lazy" style={{ objectPosition: "left" }} /><figcaption>Aa NAD Design System</figcaption></figure>
+            </Link>
+          ) : (
+            <Link href={`/work/${nxt.slug}/`} className="cs-next-link" data-cursor="Next" data-sound="whoosh">
+              <div><div className="label">Next case study</div><span className="cs-next-t">{nxt.title} →</span></div>
+              <figure className="polaroid cs-next-cover"><img src={nxt.cover.src} alt={`${nxt.name} cover`} loading="lazy" /><figcaption>{nxt.name}</figcaption></figure>
+            </Link>
+          )}
         </section>
       </main>
       <Footer />

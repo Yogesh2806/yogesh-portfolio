@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useSite } from "../Providers";
 import { sound } from "@/lib/sound";
 import { Arrow } from "../Icons";
+import AaMark from "../case/AaMark";
 
 gsap.registerPlugin(ScrollTrigger);
 const V = (f: string) => `/img/visuals/${f}.webp`;
@@ -175,6 +176,21 @@ export default function VisualsPage() {
           <p className="v-quote">Offline-first learning app (English and design) where users choose their AI: their own API key, Gemini Nano, or an in-browser model.</p>
           <a className="btn btn-ink" href="https://learn-prep-pro.vercel.app/" target="_blank" rel="noreferrer">Open Learn Prep <Arrow size={16} /></a>
         </div>
+      </section>
+
+      {/* Design system entry */}
+      <section className="v-ds" id="design-system" aria-label="Aa NAD Design System">
+        <Link href="/design-system/" className="v-ds-in" data-cursor="View" data-sound="whoosh">
+          <div className="v-ds-text">
+            <div className="v-ds-kick"><AaMark size={30} /><span className="label">Also on the shelf · Design system</span></div>
+            <h2>Aa NAD <span className="ital">Design System</span></h2>
+            <p>Monochrome, accessibility-first and open source. Bring your own brand in 11 tokens. Built with Claude as my build partner.</p>
+            <div className="v-ds-tags"><span>Design system</span><span>Open source</span><span>Built with Claude</span></div>
+            <span className="v-ds-go">See the design system <Arrow size={16} /></span>
+          </div>
+          <figure className="polaroid v-ds-cover"><img src="/img/ds/ds-figma-thumbnail.webp" alt="Aa NAD Design System Figma library cover" loading="lazy" /><figcaption>the system behind the sketches</figcaption></figure>
+          <span className="note v-ds-new">new ;)</span>
+        </Link>
       </section>
 
       {/* Bizflyte */}

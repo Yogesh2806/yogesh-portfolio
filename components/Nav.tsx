@@ -34,6 +34,7 @@ export default function Nav({ mode = "float" }: Props) {
 
   // active link
   useEffect(() => {
+    if (path.startsWith("/design-system")) return setActive("design-system");
     if (path.startsWith("/visuals")) return setActive("visuals");
     if (path.startsWith("/experience")) return setActive("experience");
     if (path.startsWith("/work")) return setActive("work");
