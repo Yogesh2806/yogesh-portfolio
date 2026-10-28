@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Experience", description: "Nearly th
 type T = { frm: string; to: string; cls: string; loc: string; co: string; role: string; col: string; fg: string; pts: string[]; met: string[]; cv?: string; cvcap?: string; cta?: string };
 const COVERS: Record<string, [string, string]> = { doctiq: ["/img/home/cover-doctiq.webp", "/work/doctiq/"], wse: ["/img/home/cover-speak.webp", "/work/speak-plus/"], swim: ["/img/home/cover-swimingo.webp", "/work/swimingo/"] };
 const NOTE = ["#FFE45C", "#FFB3C7", "#B8D4FF", "#C5F0A4", "#FFC98A", "#D9C8FF"];
-const STOPS = [["2022", "CES"], ["2023", "Ducima (Freelance)"], ["2024", "Swimingo (Freelance)"], ["2024", "Wall Street English"], ["2025", "Doctiq"], ["2025", "Modent Me"]];
+const STOPS = [["2022", "CES"], ["2023", "Ducima (Freelance)"], ["2024", "Swimingo (Freelance)"], ["2024", "Wall Street English"], ["2025", "Modent Me"], ["2025", "Doctiq"]];
 const SKILLS = [
   ["Design", "UX research · journey mapping · information architecture · interaction design · wireframing &amp; prototyping · high-fidelity UI · design systems (Atomic Design) · usability testing · accessibility (WCAG)"],
   ["Product", "Product discovery · JTBD · A/B testing · funnel &amp; retention optimisation · MVP definition · roadmap input · stakeholder alignment"],

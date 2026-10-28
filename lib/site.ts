@@ -4,7 +4,7 @@ export const SITE = {
   email: "yogeshjeevanv@gmail.com",
   linkedin: "https://www.linkedin.com/in/yogesh-jeevan-1a0002185/",
   behance: "https://www.behance.net/yogesh-jeevan",
-  resume: "/Yogesh_Jeevan_Resume.pdf",
+  resume: "/Yogesh_Jeevan_Product_Designer.pdf",
   url: "https://yogeshjeevan.vercel.app",
 };
 
