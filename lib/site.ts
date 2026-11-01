@@ -5,7 +5,7 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/in/yogesh-jeevan-1a0002185/",
   behance: "https://www.behance.net/yogesh-jeevan",
   resume: "/Yogesh_Jeevan_Product_Designer.pdf",
-  url: "https://yogeshjeevan.vercel.app",
+  url: "https://yogeshjeevan.cc.cd",
 };
 
 export const NAV = [
