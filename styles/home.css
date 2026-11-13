@@ -200,8 +200,8 @@
 .postcard-sec { background-color: var(--mari); padding: 60px var(--gutter) 80px; }
 .postcard { position: relative; max-width: 1320px; margin: 0 auto; background: #fffbf1; border: 3px solid var(--ink); border-radius: 10px; box-shadow: 14px 16px 0 var(--ink); padding: 40px 56px 50px; transform: rotate(-1.2deg); }
 .pc-kank { font-size: clamp(44px, 5.3vw, 76px); color: var(--pink); transform: rotate(-4deg); display: inline-block; margin-left: 10px; }
-.pc-name { position: relative; margin-top: -6px; }
-.pc-shadow, .pc-letters { white-space: nowrap; font-family: var(--f-disp); font-weight: 800; font-size: clamp(76px, 20.5vw, 300px); line-height: .82; letter-spacing: -.03em; margin: 0; }
+.pc-name { position: relative; margin-top: -6px; container-type: inline-size; }
+.pc-shadow, .pc-letters { white-space: nowrap; font-family: var(--f-disp); font-weight: 800; font-size: min(24.5cqi, 300px); line-height: .82; letter-spacing: -.03em; margin: 0; }
 .pc-shadow { position: absolute; left: .04em; top: .04em; color: var(--ink); }
 .pc-letters { position: relative; }
 .pc-letters span { background-size: cover; background-position: center; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 3px var(--ink); display: inline-block; transition: transform .4s var(--ease-out); }
@@ -218,6 +218,8 @@
 .pc-mark .pm-date { fill: var(--pink); stroke: none; font-family: var(--f-disp); font-size: 22px; font-weight: 800; }
 .pc-to { width: 330px; margin-top: 64px; display: flex; flex-direction: column; gap: 2px; }
 .pc-to div { border-bottom: 1.5px solid rgba(26, 20, 38, .35); padding: 6px 0 4px; font-size: 28px; line-height: 1.1; color: var(--indigo); }
+/* the name now sizes to the card, so the bottom half stacks a little earlier to keep the stamp clear of the address */
+@media (max-width: 1180px) and (min-width: 981px) { .pc-bottom { grid-template-columns: 1fr; gap: 10px; } }
 
 /* ------------------------------------------------------------------ mobile */
 @media (max-width: 980px) {
