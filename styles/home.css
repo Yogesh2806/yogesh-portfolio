@@ -16,7 +16,7 @@
 .pl-bar i { display: block; height: 100%; background: var(--mari); transition: width .3s linear; }
 
 /* ------------------------------------------------------------------ film hero */
-.film { position: relative; height: 600vh; background: var(--night); }
+.film { position: relative; height: 420vh; background: var(--night); }
 .stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: var(--night); color: var(--ivory); }
 .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(14, 11, 8, .55) 0%, rgba(14, 11, 8, .05) 22%, rgba(14, 11, 8, 0) 55%, rgba(14, 11, 8, .66) 100%); }
