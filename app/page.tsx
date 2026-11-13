@@ -5,7 +5,7 @@ import Hero from "@/components/home/Hero";
 import Postcard from "@/components/Postcard";
 import { Marquee, WorkCards, Fan, Toolkit, ContactActions } from "@/components/home/Interactive";
 import { Arrow, Star } from "@/components/Icons";
-import { STATS, STORY_PHOTOS, EXP, RECS, NOTES, DOMAINS } from "@/lib/home";
+import { STORY_PHOTOS, EXP, RECS, NOTES, DOMAINS } from "@/lib/home";
 import { html } from "@/lib/site";
 
 export default function Home() {
@@ -26,13 +26,10 @@ export default function Home() {
           </p>
           <div className="stats">
             <div className="stat stat-hero" data-reveal="up">
-              <div className="stat-a"><span data-count>3</span> <span className="ital">yrs</span></div>
+              <div className="stat-a"><span data-count>3+</span> <span className="ital">yrs</span></div>
               <div className="stat-b">shipping products end to end, across</div>
               <div className="stat-chips">{DOMAINS.map(([t, c]) => <span key={t} style={{ background: c }}>{t}</span>)}</div>
             </div>
-            {STATS.slice(1).map(([a, b]) => (
-              <div key={a} className="stat" data-reveal="up"><div className="stat-a" data-count>{a}</div><div className="stat-b">{b}</div></div>
-            ))}
           </div>
         </section>
 

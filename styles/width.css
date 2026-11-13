@@ -1,0 +1,6 @@
+/* ------------------------------------------------------------------ reading width
+   Every section except the home film keeps its full-bleed background, but its content sits in a centred
+   column no wider than --content, so lines stay readable on large monitors. */
+:root { --content: 1200px; --side: max(var(--gutter), calc((100vw - var(--content)) / 2)); }
+.sec, .cs-hero, .cs-next, .xp-hero, .v-hero, .v-ch, .v-outro, .v-ds, .postcard-sec, .footer, .nf { padding-left: var(--side); padding-right: var(--side); }
+.bz-band { margin-left: calc(var(--side) * -1); margin-right: calc(var(--side) * -1); padding-left: var(--side); padding-right: var(--side); }
