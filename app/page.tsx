@@ -1,149 +1,183 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import Hero from "@/components/home/Hero";
-import Postcard from "@/components/Postcard";
-import { Marquee, WorkCards, Fan, Toolkit, ContactActions } from "@/components/home/Interactive";
-import { Arrow, Star } from "@/components/Icons";
-import { STORY_PHOTOS, EXP, RECS, NOTES, DOMAINS } from "@/lib/home";
-import { html } from "@/lib/site";
+import Nav from "@/components/v2/Nav";
+import Footer from "@/components/v2/Footer";
+import LivingHero from "@/components/v2/LivingHero";
+import { ResumeButton } from "@/components/v2/Buttons";
+import { WORK, EXP, HOW, TOOLS, ROT, PHOTOS } from "@/lib/v2";
+import { RECS } from "@/lib/home";
+import { LOGOS } from "@/lib/logos";
+import { SITE, html } from "@/lib/site";
 
 export default function Home() {
+  const half = Math.ceil(RECS.length / 2);
+  const rows = [RECS.slice(0, half), RECS.slice(half)];
   return (
     <>
-      <Nav mode="reveal" />
+      <Nav />
       <main id="main">
-        <Hero />
-        <Marquee id="strip" />
-
-        {/* (01) Hello */}
-        <section className="sec hello">
-          <div className="label">(01) Hello</div>
-          <p className="hello-big" data-split="">
-            I geek out over <span className="pic" data-nosplit="" style={{ ["--r" as string]: "-3deg" }}><img src="/img/home/desk.webp" alt="" /></span>{" "}
-            <span className="ital" style={{ color: "var(--pink)" }}>why</span> people do what they do. Then I design around it,{" "}
-            <span className="pic" data-nosplit="" style={{ ["--r" as string]: "4deg" }}><img src="/img/home/rooftop.webp" alt="" /></span> using AI to move faster while the strategy stays mine.
-          </p>
-          <div className="stats">
-            <div className="stat stat-hero" data-reveal="up">
-              <div className="stat-a"><span data-count>3+</span> <span className="ital">yrs</span></div>
-              <div className="stat-b">shipping products end to end, across</div>
-              <div className="stat-chips">{DOMAINS.map(([t, c]) => <span key={t} style={{ background: c }}>{t}</span>)}</div>
+        <LivingHero>
+          <div className="hero-copy">
+            <div>
+              <div className="lab">Product designer · Chennai, India</div>
+              <h1>Calm products for a <span className="it">complex</span> world.</h1>
+              <p>3+ years designing B2B and B2C SaaS end to end.</p>
+            </div>
+            <div className="hero-side">
+              <span className="hand">psst... the good stuff<br />is just below ;)</span>
+              <a href="#work" className="btn btn-light">View case studies ↓</a>
             </div>
           </div>
-        </section>
+        </LivingHero>
 
-        {/* (02) Selected work */}
-        <section id="work" className="sec work">
-          <div className="work-head">
-            <div><div className="label">(02) Selected work</div><h2 className="h-sec work-h" data-split="">Selected <span className="ital" style={{ color: "var(--mari)" }}>work</span></h2></div>
-            <span className="work-count">04 case studies</span>
-          </div>
-          <WorkCards />
-        </section>
-
-        {/* Side quest: Visuals */}
-        <section id="visuals" className="sec teaser dots">
-          <div className="teaser-text">
-            <div className="label">Side quest · Visuals</div>
-            <h2 className="h-sec" data-split="">Pixels I&#8217;m <span className="ital" style={{ color: "var(--pink)" }}>proud</span> of.</h2>
-            <p className="lede" data-reveal="up">UI, brand and the odd poster, from Bizflyte to Modent Media. Less case study, more show and tell.</p>
-            <Link href="/visuals/" className="btn btn-ink" data-reveal="up" data-sound="whoosh">See all visuals <Arrow size={17} /></Link>
-            <span className="hand teaser-note">9 projects · 32 pieces</span>
-          </div>
-          <Fan />
-        </section>
-
-        {/* (03) Story */}
-        <section id="story" className="sec story">
-          <div className="story-top">
-            <div><div className="label">(03) Where I come from</div>
-              <h2 className="h-sec story-h" data-split="">NoRtH&nbsp;<span className="ital" style={{ color: "var(--pink)" }}>roots.</span><br />SoUtH&nbsp;<span className="ital" style={{ color: "var(--indigo)" }}>raised.</span></h2></div>
-            <div className="story-copy" data-reveal="up">
-              <p>I&#8217;m a person who geeks out over why people do what they do, which is probably why I ended up in design.</p>
-              <p>When I&#8217;m not designing products, I&#8217;m out shooting photos, videos, social content, you name it. I have a thing for moments that tell a story without words.</p>
-              <p>Oh, and the gym is non-negotiable. It&#8217;s where I reset, refocus, and show up better for everything else.</p>
-              <p className="hand story-hand">Chennai-based. Visually obsessed. Always improving something. iykyk ;)</p>
+        {/* ---------------- work */}
+        <section className="sec work-sec" id="work">
+          <div className="sec-head" data-rv>
+            <div><div className="lab">Case studies</div><h2 className="h2">Selected <span className="it">work</span></h2></div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
+              <span className="hand" style={{ fontSize: 26 }}>start with this one ↙</span>
+              <span className="muted" style={{ fontSize: 14 }}>04 case studies · hover to peek, click to read</span>
             </div>
           </div>
-          <div className="board" data-lenis-prevent-touch="">
-            {STORY_PHOTOS.map((p, i) => (
-              <figure key={p.src} className={`polaroid ph ph-${i}`} data-reveal="drop" data-rot={p.rot} data-reveal-sound="paper" data-delay={(i * 0.06).toFixed(2)}>
-                <span className="tape" /><img src={p.src} alt={p.alt} loading="lazy" /><figcaption dangerouslySetInnerHTML={html(p.cap)} />
-              </figure>
-            ))}
-            <div className="hi-card" data-reveal="scale"><img src="/img/home/desk.webp" alt="Yogesh waving at his desk" loading="lazy" /><span>hi, I&#8217;m Yogesh <Star size={18} /></span></div>
-            <span className="pill-sticker place p1" style={{ background: "var(--mari)", color: "var(--ink)" }} data-reveal="scale" data-rot="-4">Jaisalmer, RJ</span>
-            <span className="pill-sticker place p2" style={{ background: "var(--indigo)", color: "var(--ivory)" }} data-reveal="scale" data-rot="5">Chennai, TN</span>
-          </div>
-        </section>
-
-        {/* (04) Experience */}
-        <section id="experience" className="sec exp">
-          <div className="label" style={{ color: "var(--ivory)" }}>(04) Experience</div>
-          <h2 className="h-sec" data-split="">Where I&#8217;ve <span className="ital" style={{ color: "var(--mari)" }}>shipped</span></h2>
-          <div className="exp-rows">
-            {EXP.map((e) => (
-              <Link key={e.co} href="/experience/" className="exp-row" data-reveal="up" data-sound-hover="tick">
-                <span className="exp-when">{e.when}{e.now && <em>now</em>}</span>
-                <span className="exp-co">{e.co}</span>
-                <span className="exp-role" dangerouslySetInnerHTML={html(e.role)} />
-                <span className="exp-desc">{e.desc}</span>
-                <span className="exp-go" aria-hidden="true"><Arrow size={22} /></span>
+          <div className="grid-2">
+            {WORK.map((w, i) => (
+              <Link key={w.href} href={w.href} className="wc" style={{ ["--c" as string]: w.c }} data-rv={(i % 2) * 120}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <div className="wc-img"><div><img src={w.cover} alt={`${w.title}, cover`} loading="lazy" /></div></div>
+                <div className="wc-body">
+                  <div className="wc-k lab"><span style={{ color: w.c }}>{w.n}</span><span className="dot" style={{ background: w.c }} />{w.kicker}</div>
+                  <h3>{w.title}</h3>
+                  <div className="wc-more"><div><p>{w.desc}</p><div className="chips">{w.chips.map((c) => <span key={c} className="chip">{c}</span>)}</div></div></div>
+                  <div className="wc-foot"><span className="wc-metric"><b>{w.big}</b> · {w.small}</span><span className="wc-go" aria-hidden="true">↗</span></div>
+                </div>
               </Link>
             ))}
           </div>
-          <Link href="/experience/" className="btn btn-outline exp-all" style={{ color: "var(--ivory)" }} data-sound="whoosh">Full experience <Arrow size={16} /></Link>
+
+          <Link href="/visuals/" className="card vt" data-rv>
+            <div className="vt-l">
+              <div className="vt-stack" aria-hidden="true">
+                {/* eslint-disable @next/next/no-img-element */}
+                <div style={{ left: 0, top: 28, transform: "rotate(-8deg)" }}><img src="/img/visuals/minimo-hero.webp" alt="" /></div>
+                <div style={{ left: 96, top: 10, transform: "rotate(4deg)" }}><img src="/img/visuals/macbook-pro-16-2.webp" alt="" /></div>
+                <div style={{ left: 190, top: 34, transform: "rotate(-3deg)" }}><img src="/img/visuals/learnprep-hero.webp" alt="" /></div>
+                {/* eslint-enable @next/next/no-img-element */}
+              </div>
+              <div className="vt-t"><div className="lab">Visuals</div><h3>More screens, less reading.</h3><p>Mobile apps, web dashboards and side projects like Learn Prep, Go Calories and MiniMo, all in one place.</p></div>
+            </div>
+            <div className="vt-r"><span className="hand" style={{ fontSize: 22 }}>eye candy this way ↓</span><span className="btn btn-line">See visuals ↗</span></div>
+          </Link>
         </section>
 
-        {/* (05) Toolkit */}
-        <section className="sec toolkit">
-          <div className="toolkit-head">
-            <div><div className="label">(05) Toolkit</div><h2 className="h-sec" data-split="">Tools I <span className="ital" style={{ color: "var(--indigo)" }}>think</span> with</h2></div>
-            <p className="lede toolkit-lede" data-reveal="up">AI speeds me up. Taste and critique decide. <span className="hand" style={{ color: "var(--pink)", fontSize: "1.37em" }}>speed without direction is just divergence.</span></p>
+        {/* ---------------- little story */}
+        <section className="sec story" id="story">
+          <div className="story-grid">
+            <div className="card story-card" data-rv>
+              <div className="lab">Little story</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+                <h2>Curious <span className="it">first</span>.<br />Designer <span className="it teal">second</span>.</h2>
+                <p className="lede" style={{ fontSize: 19 }}>Started in code, stayed for design. I turn messy problems into screens people don&rsquo;t have to think about.</p>
+              </div>
+            </div>
+            <div className="card craft" data-rv="120">
+              <div className="lab">In the craft</div>
+              <div><b>3+<span> yrs</span></b><div className="muted" style={{ marginTop: 16, fontSize: 14 }}>shipping B2B, B2C and SaaS products end to end</div></div>
+            </div>
           </div>
-          <Toolkit />
-          <span className="hand toolkit-hint">psst, you can throw these around</span>
-        </section>
-
-        {/* (06) Kind words */}
-        <section id="words" className="sec words">
-          <div className="words-head">
-            <div><div className="label">(06) Kind words</div><h2 className="h-sec" data-split="">From people I&#8217;ve <span className="ital" style={{ color: "var(--pink)" }}>shipped</span> with</h2></div>
-            <a className="words-li" href="https://www.linkedin.com/in/yogesh-jeevan-1a0002185/details/recommendations/" target="_blank" rel="noreferrer">8 on LinkedIn <Arrow size={14} /></a>
-          </div>
-          <div className="notes">
-            {RECS.map((r, i) => (
-              <figure key={r.name} className="rec" style={{ background: NOTES[i % 6], ["--r" as string]: `${[-1.5, 1.2, -0.8, 1.6, -1.2, 0.9, -1.6, 1.1][i]}deg` }} data-reveal="up" data-reveal-sound="paper">
-                <span className="rec-tape" aria-hidden="true" />
-                <blockquote>&ldquo;{r.q}&rdquo;</blockquote>
-                <figcaption><img src={`/img/home/av-${r.img}.webp`} alt="" loading="lazy" /><span><b>{r.name}</b><em dangerouslySetInnerHTML={html(r.role)} /></span></figcaption>
-              </figure>
+          <div className="polas">
+            {PHOTOS.map((p, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <figure key={p.src} className="pola" style={{ ["--r" as string]: `${p.r}deg` }} data-rv={i * 120}><img src={p.src} alt={p.alt} loading="lazy" /></figure>
             ))}
           </div>
         </section>
 
-        {/* (07) Contact */}
-        <section id="contact" className="sec contact dots">
-          <div className="contact-grid">
-            <div>
-              <div className="label">(07) Contact</div>
-              <h2 className="contact-h" data-split="">Let&#8217;s build something people <span className="ital" style={{ color: "var(--indigo)" }}>actually</span> use.</h2>
-              <ContactActions />
+        {/* ---------------- experience */}
+        <section className="sec exp" id="experience">
+          <div className="sec-head" data-rv>
+            <div><div className="lab">Experience</div><h2 className="h2">Where I&rsquo;ve <span className="it">shipped</span></h2></div>
+            <ResumeButton className="btn btn-line" />
+          </div>
+          <div className="card tl" data-rv>
+            <div className="tl-row">
+              {EXP.map((e) => (
+                <div key={e.co} className={`stop${e.now ? " now" : ""}`}>
+                  <div className="pin"><i /></div>
+                  <div className="when">{e.when}</div>
+                  <div className="co">{e.co}</div>
+                  <div className="role" dangerouslySetInnerHTML={html(e.role)} />
+                  {e.now && <span className="hand">you are here ↑</span>}
+                </div>
+              ))}
             </div>
-            <div className="contact-art">
-              <figure className="polaroid contact-photo" data-reveal="drop" data-rot="4"><span className="tape" /><img src="/img/home/stand.webp" alt="Yogesh standing on a rooftop under monsoon clouds" loading="lazy" /></figure>
-              <figure className="contact-video" data-reveal="drop" data-rot="-4">
-                <video src="/video/desk-intro.mp4" poster="/video/desk-intro.jpg" autoPlay muted loop playsInline preload="metadata" aria-label="Yogesh waving hello at his desk" />
-                <figcaption><span className="rec-dot" aria-hidden="true" />hi, I&#8217;m Yogesh</figcaption>
-              </figure>
-              <div className="note tape contact-note" data-reveal="scale" data-rot="-5">replies within a day. usually faster ;)</div>
+          </div>
+        </section>
+
+        {/* ---------------- how I work + toolkit */}
+        <section className="sec skills" id="skills">
+          <div className="sk-grid">
+            <div className="card how" data-rv>
+              <div className="lab">How I work</div>
+              {HOW.map(([t, d], i) => (
+                <div key={t} className="how-step"><div><span>0{i + 1}</span><b>{t}</b></div><p>{d}</p></div>
+              ))}
+            </div>
+            <div className="card kit" data-rv="120">
+              <div className="kit-head"><div className="lab">Toolkit</div><span className="hand" style={{ fontSize: 22, transform: "rotate(-2deg)" }}>AI speeds me up. taste decides.</span></div>
+              <div className="pills">
+                {TOOLS.map(([n, d, bg, fg, out], i) => (
+                  <span key={n} className={`tp${out ? " out" : ""}`} style={{ background: bg, color: fg, ["--r" as string]: `${ROT[i]}deg` }}>
+                    <span className="tp-ic" dangerouslySetInnerHTML={{ __html: LOGOS[n] || `<b>${n[0]}</b>` }} />
+                    <span className="tp-t"><span className="tp-n">{n}</span><span className="tp-d">{d}</span></span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ---------------- testimonials */}
+        <section className="sec words" id="testimonials">
+          <div className="sec-head" data-rv>
+            <div><div className="lab">Testimonies</div><h2 className="h2">What people <span className="it">say</span></h2></div>
+            <a className="btn btn-line" href={`${SITE.linkedin}details/recommendations/`} target="_blank" rel="noreferrer">All {RECS.length} on LinkedIn ↗</a>
+          </div>
+          <div className="marq">
+            {rows.map((row, ri) => (
+              <div key={ri} className={`mrow${ri ? " rev" : ""}`}>
+                {[...row, ...row].map((r, i) => (
+                  <figure key={i} className="card q" style={{ margin: 0 }} aria-hidden={i >= row.length || undefined}>
+                    <p>&ldquo;{r.q}&rdquo;</p>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <figcaption className="q-who"><img src={`/img/home/av-${r.img}.webp`} alt="" loading="lazy" /><div><b>{r.name}</b><span dangerouslySetInnerHTML={html(r.role)} /></div></figcaption>
+                  </figure>
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ---------------- contact */}
+        <section className="sec contact" id="contact">
+          <div className="card ct" data-rv>
+            <svg className="stamp" viewBox="0 0 190 190" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="95" cy="95" r="78" /><circle cx="95" cy="95" r="58" />
+              <path id="pm" d="M95 95 m-68 0 a68 68 0 1 1 136 0 a68 68 0 1 1 -136 0" stroke="none" />
+              <text fill="currentColor" stroke="none" style={{ fontFamily: "var(--f-mono)", fontSize: 12, letterSpacing: 3 }}><textPath href="#pm">CHENNAI · OPEN TO WORK · 2026 ·</textPath></text>
+              <text x="95" y="103" textAnchor="middle" fill="currentColor" stroke="none" style={{ fontSize: 24, fontWeight: 600 }}>yj.</text>
+            </svg>
+            <div className="lab">Contact</div>
+            <h2>Let&rsquo;s build<br />something <span className="it">good.</span></h2>
+            <div className="ct-foot">
+              <a className="ct-mail" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              <div style={{ display: "flex", gap: 10 }}>
+                <a className="btn btn-line" href={SITE.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                <ResumeButton className="btn btn-solid" />
+              </div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-      <Postcard />
     </>
   );
 }
