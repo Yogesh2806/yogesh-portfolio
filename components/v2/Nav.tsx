@@ -78,16 +78,16 @@ export default function Nav() {
                 </Link>
               ))}
               <hr />
-              <Link href="/visuals/" className="mi" role="menuitem">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <span className="mi-th mi-grid">{VIS.map((s) => <img key={s} src={s} alt="" />)}</span>
-                <span className="mi-t"><span className="mi-n">Visuals ↗</span><span className="mi-d">Mobile, web and side projects</span></span>
-              </Link>
-              <hr />
               <Link href="/design-system/" className="mi" role="menuitem">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <span className="mi-th"><img src="/img/ds/ds-figma-thumbnail.webp" alt="" /></span>
                 <span className="mi-t"><span className="mi-n"><span className="dot" style={{ background: "var(--ac)" }} />Aa NAD Design System</span><span className="mi-d">Open source · 249 tokens, 45 components</span></span>
+              </Link>
+              <hr />
+              <Link href="/visuals/" className="mi" role="menuitem">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <span className="mi-th mi-grid">{VIS.map((s) => <img key={s} src={s} alt="" />)}</span>
+                <span className="mi-t"><span className="mi-n">Visuals ↗</span><span className="mi-d">Mobile, web and side projects</span></span>
               </Link>
             </div>
           </div>
