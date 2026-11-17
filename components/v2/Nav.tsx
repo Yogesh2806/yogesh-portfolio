@@ -15,13 +15,19 @@ const CASES = [
 const VIS = ["/img/visuals/learnprep-hero.webp", "/img/visuals/minimo-hero.webp", "/img/visuals/macbook-pro-16-2.webp", "/img/ds/ds-figma-thumbnail.webp"];
 
 function Theme() {
-  const [t, setT] = useState<"dark" | "light">("dark");
-  useEffect(() => { setT(document.documentElement.dataset.theme === "light" ? "light" : "dark"); }, []);
-  const set = (v: "dark" | "light") => { setT(v); document.documentElement.dataset.theme = v; try { localStorage.setItem("yj-theme", v); } catch {} };
+  // Which button looks pressed comes from CSS ([data-theme] on <html>), so it is right on the first paint.
+  const set = (v: "dark" | "light") => {
+    const root = document.documentElement;
+    if (root.dataset.theme === v) return;
+    root.classList.add("theme-swap");
+    root.dataset.theme = v;
+    try { localStorage.setItem("yj-theme", v); } catch {}
+    window.setTimeout(() => root.classList.remove("theme-swap"), 450);
+  };
   return (
     <div className="theme" role="group" aria-label="Colour theme">
-      <button aria-pressed={t === "light"} onClick={() => set("light")} aria-label="Light theme" title="Light"><Sun /></button>
-      <button aria-pressed={t === "dark"} onClick={() => set("dark")} aria-label="Dark theme" title="Dark"><Moon /></button>
+      <button className="t-light" onClick={() => set("light")} aria-label="Light theme" title="Light"><Sun /></button>
+      <button className="t-dark" onClick={() => set("dark")} aria-label="Dark theme" title="Dark"><Moon /></button>
     </div>
   );
 }
@@ -35,9 +41,11 @@ export default function Nav() {
   const path = usePathname();
 
   useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 40);
-    on(); window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
+    let raf = 0;
+    const on = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; setScrolled(window.scrollY > 40); }); };
+    setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", on, { passive: true });
+    return () => { window.removeEventListener("scroll", on); cancelAnimationFrame(raf); };
   }, []);
   useEffect(() => { setOpen(false); setMob(false); }, [path]);
   useEffect(() => {
@@ -49,13 +57,16 @@ export default function Nav() {
   }, [open]);
 
   const hoverable = () => typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
+  const timer = useRef(0);
+  const enter = () => { if (!hoverable()) return; window.clearTimeout(timer.current); setOpen(true); };
+  const leave = () => { if (!hoverable()) return; window.clearTimeout(timer.current); timer.current = window.setTimeout(() => setOpen(false), 220); };
 
   return (
     <header className={`nav-wrap${scrolled ? " scrolled" : ""}${mob ? " menu-open" : ""}`}>
       <nav className="nav" aria-label="Main">
         <Link href="/" className="brand" aria-label="Yogesh Jeevan, home"><span className="yj">yj.</span>Yogesh Jeevan</Link>
         <div className="nav-links">
-          <div ref={work} className={`work${open ? " open" : ""}`} onMouseEnter={() => hoverable() && setOpen(true)} onMouseLeave={() => hoverable() && setOpen(false)}>
+          <div ref={work} className={`work${open ? " open" : ""}`} onMouseEnter={enter} onMouseLeave={leave}>
             <button aria-haspopup="true" aria-expanded={open} onClick={() => setOpen((v) => !v)}>Work<Chevron /></button>
             <div className="menu" role="menu">
               <div className="lab">Case studies</div>

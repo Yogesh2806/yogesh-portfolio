@@ -133,7 +133,7 @@ function render(b: Block, n: number) {
       return (<>
         <Head n={n} b={b} title='Live, free and <span class="it">yours to fork</span>.' />
         <div className="cards" style={{ gridTemplateColumns: "repeat(3, minmax(0, 1fr))", marginTop: 0 }}>{links.map(([t, d, l, href], i) => (
-          <a key={t} href={href} target="_blank" rel="noreferrer" className="card"><b style={{ fontSize: 20 }}>{t}</b><span>{d}</span><span className={`btn ${i ? "btn-line" : "btn-solid"}`} style={{ marginTop: 14, alignSelf: "flex-start", fontSize: 14, padding: "10px 16px", color: i ? "var(--tx)" : "var(--bg)" }}>{l}</span></a>
+          <a key={t} href={href} target="_blank" rel="noreferrer" className="card" style={{ minHeight: 220 }}><b style={{ fontSize: 20 }}>{t}</b><span style={{ marginBottom: 20 }}>{d}</span><span className={`btn ${i ? "btn-line" : "btn-solid"}`} style={{ marginTop: "auto", alignSelf: "flex-start", fontSize: 14, padding: "10px 16px", color: i ? "var(--tx)" : "var(--bg)" }}>{l}</span></a>
         ))}</div>
         <div style={{ marginTop: 16 }}><span className="hand" style={{ color: "var(--pink)", fontSize: 22, transform: "rotate(-2deg)" }}>this grows every week, like the system</span></div>
       </>);

@@ -54,16 +54,24 @@ export default function Providers({ children }: { children: ReactNode }) {
     return () => document.removeEventListener("click", onClick);
   }, [lenis]);
 
-  // reveal on scroll; content stays visible without JS (see .js in CSS)
+  // reveal on scroll: one observer for the whole app, and a MutationObserver so content that
+  // appears later (route changes, the Visuals filters) is picked up too. Without JS it stays visible.
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll<HTMLElement>("[data-rv]:not(.in)"));
-    if (reduced() || !("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("in")); return; }
+    if (reduced() || !("IntersectionObserver" in window)) {
+      const all = () => document.querySelectorAll<HTMLElement>("[data-rv]").forEach((e) => e.classList.add("in"));
+      all(); const mo = new MutationObserver(all); mo.observe(document.body, { childList: true, subtree: true });
+      return () => mo.disconnect();
+    }
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => { if (en.isIntersecting) { const el = en.target as HTMLElement; el.style.transitionDelay = `${el.dataset.rv || 0}ms`; el.classList.add("in"); io.unobserve(el); } });
-    }, { rootMargin: "0px 0px -8% 0px" });
-    els.forEach((e) => io.observe(e));
-    return () => io.disconnect();
-  }, [pathname]);
+    }, { rootMargin: "0px 0px -6% 0px" });
+    const scan = () => document.querySelectorAll<HTMLElement>("[data-rv]:not(.in):not([data-rv-on])").forEach((e) => { e.dataset.rvOn = ""; io.observe(e); });
+    scan();
+    let raf = 0;
+    const mo = new MutationObserver(() => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; scan(); }); });
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => { io.disconnect(); mo.disconnect(); cancelAnimationFrame(raf); };
+  }, []);
 
   // new route starts at the top, unless it points at an anchor
   useEffect(() => {

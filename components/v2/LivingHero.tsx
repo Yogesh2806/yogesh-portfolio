@@ -39,8 +39,13 @@ export default function LivingHero({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     const hero = frame.current!, cv = canvas.current!;
-    const gl = cv.getContext("webgl", { antialias: false, premultipliedAlpha: false });
+    const gl = cv.getContext("webgl", { antialias: false, premultipliedAlpha: false, powerPreference: "low-power" });
     if (!gl) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let visible = true, acc = 0, last = performance.now(), raf = 0, A = 16 / 9, dead = false;
+    // if the browser drops the context (too many tabs, GPU reset), fall back to the still photo
+    const lost = (e: Event) => { e.preventDefault(); setLive(false); dead = true; cancelAnimationFrame(raf); };
+    cv.addEventListener("webglcontextlost", lost);
     const sh = (t: number, src: string) => { const o = gl.createShader(t)!; gl.shaderSource(o, src); gl.compileShader(o); if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(o) || "shader"); return o; };
     let pr: WebGLProgram;
     try { pr = gl.createProgram()!; gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(pr); gl.useProgram(pr); } catch { return; }
@@ -55,9 +60,8 @@ export default function LivingHero({ children }: { children: React.ReactNode }) 
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, im); res(im); };
       im.onerror = rej; im.src = src;
     });
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let visible = true, acc = 0, last = performance.now(), raf = 0, A = 16 / 9, dead = false;
-    const size = () => { const d = Math.min(window.devicePixelRatio || 1, 2); cv.width = Math.round(hero.clientWidth * d); cv.height = Math.round(hero.clientHeight * d); gl.viewport(0, 0, cv.width, cv.height); };
+    
+    const size = () => { const d = Math.min(window.devicePixelRatio || 1, 1.75); cv.width = Math.round(hero.clientWidth * d); cv.height = Math.round(hero.clientHeight * d); gl.viewport(0, 0, cv.width, cv.height); };
     const draw = (now: number) => { const dt = Math.min(now - last, 100); last = now; if (!reduce && visible) acc += dt; gl.uniform2f(U("R"), cv.width, cv.height); gl.uniform1f(U("T"), acc / 1000); gl.uniform1f(U("A"), A); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); };
     const loop = (now: number) => { if (dead) return; draw(now); raf = visible && !reduce ? requestAnimationFrame(loop) : 0; };
     const kick = () => { if (!raf && !reduce) { last = performance.now(); raf = requestAnimationFrame(loop); } };
@@ -70,7 +74,11 @@ export default function LivingHero({ children }: { children: React.ReactNode }) 
     const io = new IntersectionObserver((e) => { visible = e[0].isIntersecting; ambient.setAudible(visible && !document.hidden); if (visible) kick(); }); io.observe(hero);
     const vis = () => { visible = !document.hidden; ambient.setAudible(!document.hidden); if (visible) kick(); };
     document.addEventListener("visibilitychange", vis);
-    return () => { dead = true; cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); document.removeEventListener("visibilitychange", vis); ambient.setAudible(false); };
+    return () => {
+      dead = true; cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); document.removeEventListener("visibilitychange", vis); cv.removeEventListener("webglcontextlost", lost); ambient.setAudible(false);
+      // hand the GPU context back right away, so coming back to home never runs out of contexts
+      gl.getExtension("WEBGL_lose_context")?.loseContext();
+    };
   }, []);
 
   const toggle = () => { const v = !sound; setSound(v); ambient.set(v); };

@@ -159,13 +159,7 @@ export default function Home() {
         {/* ---------------- contact */}
         <section className="sec contact" id="contact">
           <div className="card ct" data-rv>
-            <svg className="stamp" viewBox="0 0 190 190" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="95" cy="95" r="78" /><circle cx="95" cy="95" r="58" />
-              <path id="pm" d="M95 95 m-68 0 a68 68 0 1 1 136 0 a68 68 0 1 1 -136 0" stroke="none" />
-              <text fill="currentColor" stroke="none" style={{ fontFamily: "var(--f-mono)", fontSize: 12, letterSpacing: 3 }}><textPath href="#pm">CHENNAI · OPEN TO WORK · 2026 ·</textPath></text>
-              <text x="95" y="103" textAnchor="middle" fill="currentColor" stroke="none" style={{ fontSize: 24, fontWeight: 600 }}>yj.</text>
-            </svg>
-            <div className="lab">Contact</div>
+                        <div className="lab">Contact</div>
             <h2>Let&rsquo;s build<br />something <span className="it">good.</span></h2>
             <div className="ct-foot">
               <a className="ct-mail" href={`mailto:${SITE.email}`}>{SITE.email}</a>
