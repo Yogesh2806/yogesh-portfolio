@@ -1,5 +1,5 @@
 // Bump RESUME_V whenever the PDF changes, so browsers never show a cached older copy.
-const RESUME_V = "2026-11-17";
+const RESUME_V = "2026-11-17b";
 
 export const SITE = {
   name: "Yogesh Jeevan",
