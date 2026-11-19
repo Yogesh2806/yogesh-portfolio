@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { SITE } from "@/lib/site";
 import { useSite } from "./Providers";
 import { Burger, Chevron, Close, Moon, Sun } from "./Icons";
@@ -32,6 +32,15 @@ function Theme() {
   );
 }
 
+function BentoIcon() {
+  return (
+    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="1.5" y="1.5" width="7" height="6" rx="1.6" /><rect x="10" y="1.5" width="4.5" height="6" rx="1.6" />
+      <rect x="1.5" y="9" width="4.5" height="5.5" rx="1.6" /><rect x="7.5" y="9" width="7" height="5.5" rx="1.6" />
+    </svg>
+  );
+}
+
 export default function Nav() {
   const { openResume } = useSite();
   const [scrolled, setScrolled] = useState(false);
@@ -48,6 +57,27 @@ export default function Nav() {
     return () => { window.removeEventListener("scroll", on); cancelAnimationFrame(raf); };
   }, []);
   useEffect(() => { setOpen(false); setMob(false); }, [path]);
+
+  // coming back from the bento: the classic page settles back in
+  useEffect(() => {
+    let from = false;
+    try { from = sessionStorage.getItem("yj-from-bento") === "1"; sessionStorage.removeItem("yj-from-bento"); } catch {}
+    if (!from) return;
+    const root = document.documentElement;
+    root.classList.add("from-bento");
+    const t = window.setTimeout(() => root.classList.remove("from-bento"), 900);
+    return () => window.clearTimeout(t);
+  }, []);
+
+  // "Make it bento": the classic page recedes, then the bento assembles
+  const router = useRouter();
+  const toBento = (e: React.MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.documentElement.classList.add("to-bento");
+    window.setTimeout(() => router.push("/bento/"), reduce ? 0 : 420);
+  };
   useEffect(() => {
     if (!open) return;
     const out = (e: PointerEvent) => { if (!work.current?.contains(e.target as Node)) setOpen(false); };
@@ -93,6 +123,7 @@ export default function Nav() {
           </div>
           <a className="long" href={SITE.linkedin} target="_blank" rel="noreferrer">Connect with me on LinkedIn</a>
           <Link href="/#contact">Contact me ;)</Link>
+          <Link href="/bento/" className="bento-link" onClick={toBento}><BentoIcon />Make it bento</Link>
           <div className="nav-m-theme"><span>Theme</span><Theme /></div>
         </div>
         <div className="nav-right">

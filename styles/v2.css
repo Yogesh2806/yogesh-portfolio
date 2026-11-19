@@ -488,3 +488,11 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 360px) {
   .brand { font-size: 0; }
 }
+
+/* ---------- bento view switch */
+.nav-links > a.bento-link { color: var(--pink); gap: 7px; }
+.nav-links > a.bento-link:hover { color: var(--tx); }
+.to-bento body > * { transition: transform .42s cubic-bezier(.4,0,.6,1), filter .42s ease, opacity .42s ease !important; transform: scale(.94); filter: blur(12px); opacity: 0; pointer-events: none; }
+.from-bento #main, .from-bento .nav-wrap { animation: from-bento .8s cubic-bezier(.2,.9,.1,1) backwards; }
+@keyframes from-bento { from { opacity: 0; transform: scale(.96); filter: blur(12px); } }
+@media (prefers-reduced-motion: reduce) { .to-bento body > * { transition: none !important; } .from-bento #main, .from-bento .nav-wrap { animation: none; } }
