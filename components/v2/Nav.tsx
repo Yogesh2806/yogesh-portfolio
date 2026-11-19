@@ -93,6 +93,7 @@ export default function Nav() {
           </div>
           <a className="long" href={SITE.linkedin} target="_blank" rel="noreferrer">Connect with me on LinkedIn</a>
           <Link href="/#contact">Contact me ;)</Link>
+          <div className="nav-m-theme"><span>Theme</span><Theme /></div>
         </div>
         <div className="nav-right">
           <Theme />
