@@ -432,6 +432,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .peek-hint { right: 14px; bottom: 14px; }
   .menu { position: static; width: 100%; display: none; }
   .work.open .menu { display: block; }
+  .nav-wrap.menu-open .nav-links > a.long { display: inline-flex; }
+  .menu { padding: 6px; }
+  .mi { align-items: flex-start; gap: 12px; padding: 8px; }
+  .mi-th { width: 64px; height: 46px; }
+  .mi-t { flex: 1; }
+  .mi-n { align-items: baseline; }
+  .mi-n .dot { flex-shrink: 0; transform: translateY(-2px); }
+  .mi-d { white-space: normal; line-height: 1.4; }
   .nav-right .btn { padding: 10px 14px; }
   .hero { padding: 96px 12px 0; }
   .hero-copy { left: 20px; right: 20px; bottom: 28px; flex-direction: column; align-items: flex-start; gap: 20px; }
@@ -469,3 +477,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* theme switch: colours ease only while the toggle is used, never on page load or navigation */
 .theme-swap, .theme-swap * { transition: background-color .4s ease, color .4s ease, border-color .4s ease !important; }
+
+/* small phones: keep the name, Resume and menu button on one row without overlap */
+@media (max-width: 390px) {
+  .brand { gap: 8px; font-size: 15px; }
+  .brand .yj { width: 34px; height: 34px; font-size: 14px; }
+  .nav-right { gap: 8px; }
+  .nav-right .btn { padding: 8px 12px; font-size: 14px; }
+}
+@media (max-width: 360px) {
+  .brand { font-size: 0; }
+}
